@@ -1,2 +1,4 @@
 # senior-project-somnia-game
-senior-project-somnia-game created by GitHub Classroom
+
+Somnia Game Description:
+Somnia will be a continuation of our project from Software Engineering, and will function relatively the same way, alongside new additions such as minigames and a revamped night section. To reiterate, this game will emphasize the importance of sleep and time management in a college setting by putting the player in the shoes of a new college student trying to make their way in the world of education. Players will be challenged to manage their stats in order to make sure their college experience goes as smoothly as possible. Stats can be changed either by interactions during their time at school, or by making it through the night section (preferably with a good night’s rest). Stats in this game will play a major role; they will determine whether or not the player can succeed in certain actions during the day, and they will also determine the difficulty of the night section, which will simulate how well they sleep, and what their stats will be when they wake up and start a new day. 
