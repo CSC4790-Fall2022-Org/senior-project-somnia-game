@@ -18,10 +18,10 @@ public class timepassage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(time.Hour != hour){
-            time.Hour = hour;
-        }
-        clock.sprite = Resources.Load<Sprite>("clock" + time.Hour);
+        #clock.sprite = Resources.Load<Sprite>(time.Hour+"oclock.png");
 
+    }
+    public void addTime(){
+        time.AddHours(1.0);
     }
 }
