@@ -4,22 +4,24 @@ using UnityEngine;
 using System;
 public class timepassage : MonoBehaviour
 {
-    DateTime time;
-    int hour;
-    int minute;
+    public DateTime time;
+    public int hour;
+    public int minute;
+    public SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
-        int hour = 8;
-        int minute = 0;
-        time = new DateTime(1999,1,1,hour,minute,0);
+        hour = 8;
+        minute = 0;
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //clock.sprite = Resources.Load<Sprite>(time.Hour+"oclock.png");
-
+        
+        Sprite newSprite = Resources.Load(hour+"oclock", typeof(Sprite)) as Sprite;
+        spriteRenderer.sprite = newSprite;
     }
     public void addTime(){
         time.AddHours(1.0);
