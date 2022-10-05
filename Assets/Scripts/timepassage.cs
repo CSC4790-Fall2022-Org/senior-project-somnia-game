@@ -24,6 +24,9 @@ public class timepassage : MonoBehaviour
         spriteRenderer.sprite = newSprite;
     }
     public void addTime(){
-        time.AddHours(1.0);
+        hour+=1;
+        if(hour == 13){
+            hour = 1;
+        }
     }
 }
