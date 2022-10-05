@@ -32,15 +32,29 @@ public class ConversationScript : MonoBehaviour
         return ConversationManager.Instance.GetInt(intName);
     }
 
+    void RollForDeath()
+    {
+        int coinFlip = Random.Range(0, 2);
+        SetConversationInt("deathRoll", coinFlip);
+        Debug.Log("You rolled " + GetConversationInt("deathRoll"));
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         StartConversation(conversationWithSmoochy);
+        SetConversationInt("deathRoll", Random.Range(0, 2));
+        RollForDeath();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(GetConversationBool("restart") == true)
+        {
+            StartConversation(conversationWithSmoochy);
+            RollForDeath();
+            SetConversationBool("restart", false);
+        }
     }
 }
