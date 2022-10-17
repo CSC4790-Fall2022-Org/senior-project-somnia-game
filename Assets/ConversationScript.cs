@@ -43,7 +43,6 @@ public class ConversationScript : MonoBehaviour
     void Start()
     {
         StartConversation(conversationWithSmoochy);
-        SetConversationInt("deathRoll", Random.Range(0, 2));
         RollForDeath();
     }
 
