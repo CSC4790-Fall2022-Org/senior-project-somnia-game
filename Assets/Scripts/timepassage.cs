@@ -22,17 +22,31 @@ public class timepassage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(minute<10){
-            leText.SetText(hour+":0"+minute);
+        String timeText ="";
+        if(hour>12){
+            if(minute<10){
+                timeText = hour+":0"+minute+ "AM";
+        }
+            else{
+                timeText = hour+":"+minute+" AM";
+            }
         }
         else{
-            leText.SetText(hour+":"+minute);
+            if(minute<10){
+                timeText = (hour-12)+":0"+minute+ "PM";
         }
+            else{
+                timeText = (hour-12)+":"+minute+" PM";
+            }
+        }
+        
+        leText.SetText(timeText);
+
     }
     public void addTime(){
         hour+=1;
-        if(hour == 13){
-            hour = 1;
+        if(hour == 25){
+            hour = 0;
         }
     }
 }
