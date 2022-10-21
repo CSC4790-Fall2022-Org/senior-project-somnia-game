@@ -14,12 +14,15 @@ public class DefineStats : MonoBehaviour
     public TextMeshProUGUI enText;
     //stats are on a scale of 0-100
 
+    void Awake(){
+        DontDestroyOnLoad(transform.gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
         stress = 20;
         hunger = 40;
-        happiness = 50;
+        happiness = 60;
         energy = 90;
         
 
