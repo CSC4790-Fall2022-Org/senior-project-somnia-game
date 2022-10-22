@@ -14,6 +14,9 @@ public class DefineStats : MonoBehaviour
     public TextMeshProUGUI enText;
     //stats are on a scale of 0-100
 
+    void Awake(){
+        DontDestroyOnLoad(transform.gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {

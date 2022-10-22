@@ -1162,6 +1162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SideBar
       objectReference: {fileID: 0}
+    - target: {fileID: 179995894911902643, guid: 8d7f8ece9c690403bad183be32389c39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 179995894911902653, guid: 8d7f8ece9c690403bad183be32389c39, type: 3}
       propertyPath: m_Pivot.x
       value: 0
