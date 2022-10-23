@@ -23,7 +23,7 @@ public class timepassage : MonoBehaviour
     void Update()
     {
         String timeText ="";
-        if(hour>12){
+        if(hour<=12){
             if(minute<10){
                 timeText = hour+":0"+minute+ "AM";
         }
