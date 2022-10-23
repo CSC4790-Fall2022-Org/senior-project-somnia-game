@@ -49,4 +49,14 @@ public class timepassage : MonoBehaviour
             hour = 0;
         }
     }
+    public void addMins(int mins){
+        minute += mins;
+        if(minute >= 60){
+            minute -= 60;
+            hour+=1;
+            if(hour == 25){
+            hour = 0;
+        }
+        }
+    }
 }
