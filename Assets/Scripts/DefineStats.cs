@@ -14,9 +14,10 @@ public class DefineStats : MonoBehaviour
     public TextMeshProUGUI enText;
     //stats are on a scale of 0-100
 
-    void Awake(){
-        DontDestroyOnLoad(transform.gameObject);
-    }
+    // void Awake(){
+    //     DontDestroyOnLoad(transform.gameObject);
+    // }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,6 @@ public class DefineStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enText.SetText("Energy: " + energy+"\nHunger: "+hunger+"\nHappiness: "+happiness+"\nStress: "+stress);
+        enText.SetText("Energy: " + energy+"\nHunger: "+hunger+"\nHappy:  "+happiness+"\nStress: "+stress);
     }
 }
