@@ -895,7 +895,7 @@ GameObject:
   - component: {fileID: 1046030071}
   - component: {fileID: 1046030070}
   m_Layer: 0
-  m_Name: chipity_pip
+  m_Name: MainMenu BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -911,9 +911,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: df17e6b4c5edddc448caf90bb1b47319, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0d2b63dbae8d56b4b92d2913dc52fb1a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.515
   m_Pitch: 1
   Loop: 0
   Mute: 0
