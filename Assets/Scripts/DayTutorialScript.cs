@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using DialogueEditor;
 
-public class DayTutorialMapScript : MonoBehaviour
+public class DayTutorialScript : MonoBehaviour
 {
     public NPCConversation TutorialConversation;
+    private GameObject redArrow;
+
+    private void Awake()
+    {
+        redArrow = GameObject.Find("RedArrow");
+}
 
     // Start is called before the first frame update
     void Start()
