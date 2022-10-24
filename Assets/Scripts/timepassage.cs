@@ -10,9 +10,9 @@ public class timepassage : MonoBehaviour
     public int minute;
     public TextMeshProUGUI leText;
     // Start is called before the first frame update
-    void Awake(){
-        DontDestroyOnLoad(transform.gameObject);
-    }
+    //void Awake(){
+    //    DontDestroyOnLoad(transform.gameObject);
+    //}
     void Start()
     {
         hour = 8;
