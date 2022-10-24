@@ -298,7 +298,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   NodeID: 2
-  TMPFont: {fileID: 0}
+  TMPFont: {fileID: 11400000, guid: 748b53e8d1356476c8cb58f06db57986, type: 2}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
 --- !u!114 &196420348
@@ -317,7 +317,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   NodeID: 1
-  TMPFont: {fileID: 0}
+  TMPFont: {fileID: 11400000, guid: 748b53e8d1356476c8cb58f06db57986, type: 2}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
 --- !u!114 &196420349
@@ -336,7 +336,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   NodeID: 0
-  TMPFont: {fileID: 0}
+  TMPFont: {fileID: 11400000, guid: 748b53e8d1356476c8cb58f06db57986, type: 2}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
 --- !u!1 &229979163
@@ -671,13 +671,13 @@ MonoBehaviour:
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
-  DefaultFont: {fileID: 0}
+  DefaultFont: {fileID: 11400000, guid: 748b53e8d1356476c8cb58f06db57986, type: 2}
   NodeSerializedDataList:
   - {fileID: 196420349}
   - {fileID: 196420348}
   - {fileID: 196420347}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
+  ContinueFont: {fileID: 11400000, guid: 748b53e8d1356476c8cb58f06db57986, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: 748b53e8d1356476c8cb58f06db57986, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls:
