@@ -8,7 +8,6 @@ public class DefineStats : MonoBehaviour
 {
 
     public int stress;
-    public int hunger;
     public int happiness;
     public int energy;
     public TextMeshProUGUI enText;
@@ -51,6 +50,15 @@ public class DefineStats : MonoBehaviour
         else if(happiness <0){
             happiness = 0;
         }
+    }
+    public int getStress(){
+        return stress;
+    }
+    public int getEnergy(){
+        return energy;
+    }
+    public int getHappiness(){
+        return happiness;
     }
 
     // Update is called once per frame
