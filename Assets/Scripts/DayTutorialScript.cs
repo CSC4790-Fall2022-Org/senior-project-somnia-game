@@ -6,12 +6,6 @@ using DialogueEditor;
 public class DayTutorialScript : MonoBehaviour
 {
     public NPCConversation TutorialConversation;
-    private GameObject redArrow;
-
-    private void Awake()
-    {
-        redArrow = GameObject.Find("RedArrow");
-}
 
     // Start is called before the first frame update
     void Start()
