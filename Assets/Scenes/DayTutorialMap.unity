@@ -769,28 +769,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7557610607051402636, guid: d52d613c5dbf17044ac98c46a9814fd8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.021038763
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557610607051402636, guid: d52d613c5dbf17044ac98c46a9814fd8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.021038763
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557610607051402636, guid: d52d613c5dbf17044ac98c46a9814fd8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.021038763
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557610607051402636, guid: d52d613c5dbf17044ac98c46a9814fd8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.59
+      value: -7.6
       objectReference: {fileID: 0}
     - target: {fileID: 7557610607051402636, guid: d52d613c5dbf17044ac98c46a9814fd8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.62
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 7557610607051402636, guid: d52d613c5dbf17044ac98c46a9814fd8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4589596
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7557610607051402636, guid: d52d613c5dbf17044ac98c46a9814fd8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -819,10 +807,6 @@ PrefabInstance:
     - target: {fileID: 7557610607051402636, guid: d52d613c5dbf17044ac98c46a9814fd8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557610607051402636, guid: d52d613c5dbf17044ac98c46a9814fd8, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d52d613c5dbf17044ac98c46a9814fd8, type: 3}
@@ -1013,10 +997,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 299009467}
-    - target: {fileID: 179995894911902654, guid: 8d7f8ece9c690403bad183be32389c39, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2573825758922715520, guid: 8d7f8ece9c690403bad183be32389c39, type: 3}
     - {fileID: 807026464, guid: 8d7f8ece9c690403bad183be32389c39, type: 3}

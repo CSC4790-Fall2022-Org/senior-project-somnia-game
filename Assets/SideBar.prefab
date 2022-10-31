@@ -53,7 +53,7 @@ Canvas:
   m_GameObject: {fileID: 179995894911902643}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stress: 0
-  hunger: 0
   happiness: 0
   energy: 0
   enText: {fileID: 179995896578731310}
@@ -437,7 +436,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stress: 20
-  hunger: 40
   happiness: 60
   energy: 90
   enText: {fileID: 179995896578731310}
