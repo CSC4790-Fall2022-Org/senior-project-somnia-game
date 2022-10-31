@@ -162,6 +162,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7119820723112771633, guid: 641f03382940a487996323f64a24ab7a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7119820723500772781, guid: 641f03382940a487996323f64a24ab7a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
