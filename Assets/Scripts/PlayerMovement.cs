@@ -6,9 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
 
     CharacterController controller;
+    Vector2 movement = Vector2.zero;
+    public KeyCode shiftLeft;
+    public KeyCode shiftRight;
     int lane = 3;
-    Vector3 movement = Vector3.zero;
+    Vector2 playerPosition = new Vector2(-2, -3);
     bool movementBool = true;
+    
 
 
     // Start is called before the first frame update
@@ -20,16 +24,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        checkInput();
     }
 
     void checkInput()
     {
-        if(Input.GetKeyDown(KeyCode.A) && movementBool && lane > 1){
+        if(Input.GetKeyDown(shiftLeft) && movementBool && lane > 1){
             lane --;
-            movement.x = -3;
+            transform.position = new Vector2(-1,-2);
         }
-        if(Input.GetKeyDown(KeyCode.D) && movementBool && lane < 5){
+        if(Input.GetKeyDown(shiftRight) && movementBool && lane < 5){
             lane ++;
             movement.x = 3;
         }
