@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dormroom.unity
     guid: 3b774318512404f6c8d61aff134cf1d6
+  - enabled: 1
+    path: Assets/Scenes/map.unity
+    guid: 4d629b64d860c4948a50844c39869d10
   m_configObjects: {}
