@@ -44,3 +44,6 @@ TagManager:
   - name: Buttons
     uniqueID: 2189934039
     locked: 0
+  - name: Tasks
+    uniqueID: 3216775121
+    locked: 0
