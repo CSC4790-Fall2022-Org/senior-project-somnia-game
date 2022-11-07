@@ -787,6 +787,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shiftLeft: 97
   shiftRight: 100
+  player: {fileID: 1374272591}
+  pos1: {fileID: 1727218498}
+  pos2: {fileID: 1268526769}
+  pos3: {fileID: 1967189056}
+  pos4: {fileID: 1102693401}
+  pos5: {fileID: 838043173}
 --- !u!4 &1374272591
 Transform:
   m_ObjectHideFlags: 0
