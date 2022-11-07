@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/map.unity
     guid: 4d629b64d860c4948a50844c39869d10
+  - enabled: 1
+    path: Assets/Scenes/Cafeteria.unity
+    guid: 85398aa4da4e17c47935af357f414552
+  - enabled: 1
+    path: Assets/Scenes/Library.unity
+    guid: 77b010e1ece352342a88aa1f16495909
   m_configObjects: {}
