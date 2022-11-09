@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode shiftRight;
     public Transform player;
     public Transform pos1,pos2,pos3,pos4,pos5;
+    public float speed = 10f;
     int lane = 3;
     Vector2 playerPosition = new Vector2(-2, -3);
     bool movementBool = true;
@@ -33,29 +34,29 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(shiftLeft) && movementBool && lane > 1){
             if(lane == 3){
-            player.position = pos2.position;
+            this.player.transform.position = Vector2.MoveTowards(player.transform.position, pos2.transform.position, (speed * Time.deltaTime));
             lane--;
             }
 
             if(lane == 2){
-            player.position = pos1.position;
+            this.player.transform.position = Vector2.MoveTowards(player.position, pos1.position, (speed * Time.deltaTime));
             lane--;
             }
 
             if(lane == 4){
-            player.position = pos3.position;
+            this.player.transform.position = Vector2.MoveTowards(player.position, pos3.position, (speed * Time.deltaTime));
             lane--;
             }
 
             if(lane == 5){
-            player.position = pos4.position;
+            this.player.transform.position = Vector2.MoveTowards(player.position, pos4.position, (speed * Time.deltaTime));
             lane--;
             }
 
         }
         if(Input.GetKeyDown(shiftRight) && movementBool && lane < 5){
-            lane ++;
-            movement.x = 3;
+            // lane ++;
+            // movement.x = 3;
         }
     }
 
