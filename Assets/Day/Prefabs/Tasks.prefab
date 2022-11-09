@@ -414,10 +414,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8606277414098521380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7f600b740a6d43439e62b84c8b6a270, type: 3}
+  m_Script: {fileID: 11500000, guid: 051049ab71ba9a04d891763399d407ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TaskPrefab: {fileID: 2990248940540649634, guid: d6112dcca97a7471ab5ab610d51d5af9, type: 3}
+  TaskPrefab: {fileID: 0}
   tasks:
   - {fileID: 0}
   - {fileID: 0}
