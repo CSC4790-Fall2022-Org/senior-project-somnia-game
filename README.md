@@ -29,5 +29,5 @@ Download [Unity Hub](https://unity3d.com/get-unity/download), and go to Installs
 4. You can preview how the game looks with the Game view.
 
 ### Execution
-Just press the play button at the top!
+Ensure that you are on the Menu.unity scene before pressing play. If you are not on this scene, change to it by pressing File --> Open Scene, and navigate to the scenes folder. Click on Menu.unity, then just press the play button at the top!
 
