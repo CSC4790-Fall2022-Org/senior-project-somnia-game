@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     int lane = 3;
     Vector2 playerPosition = new Vector2(-2, -3);
     bool movementBool = true;
-    
 
 
     // Start is called before the first frame update
@@ -34,24 +33,28 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(shiftLeft) && movementBool && lane > 1){
             if(lane == 3){
-            this.player.transform.position = Vector2.MoveTowards(player.transform.position, pos2.transform.position, (speed * Time.deltaTime));
+            // this.player.transform.position = Vector2.MoveTowards(this.player.transform.position, pos2.transform.position, (speed * Time.deltaTime));
+            // transform.position = Vector2.MoveTowards(transform.position, new Vector2(-2.63f, -3.06f), (speed * Time.deltaTime));
+            Vector3 targetPosition = transform.position;
+            targetPosition.x = 10;
+            transform.position = targetPosition;
             lane--;
             }
 
-            if(lane == 2){
-            this.player.transform.position = Vector2.MoveTowards(player.position, pos1.position, (speed * Time.deltaTime));
-            lane--;
-            }
+            // if(lane == 2){
+            // this.player.transform.position = Vector2.MoveTowards(player.position, pos1.position, step);
+            // lane--;
+            // }
 
-            if(lane == 4){
-            this.player.transform.position = Vector2.MoveTowards(player.position, pos3.position, (speed * Time.deltaTime));
-            lane--;
-            }
+            // if(lane == 4){
+            // this.player.transform.position = Vector2.MoveTowards(player.position, pos3.position, (speed * Time.deltaTime));
+            // lane--;
+            // }
 
-            if(lane == 5){
-            this.player.transform.position = Vector2.MoveTowards(player.position, pos4.position, (speed * Time.deltaTime));
-            lane--;
-            }
+            // if(lane == 5){
+            // this.player.transform.position = Vector2.MoveTowards(player.position, pos4.position, (speed * Time.deltaTime));
+            // lane--;
+            // }
 
         }
         if(Input.GetKeyDown(shiftRight) && movementBool && lane < 5){
