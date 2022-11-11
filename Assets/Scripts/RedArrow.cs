@@ -13,7 +13,7 @@ public class RedArrow : MonoBehaviour
     private Vector2 HAPPY_POSITION = new Vector2(-5.7F, 3.5F);
     private Vector2 STRESS_POSITION = new Vector2(-5.7F, 3.1F);
     private Vector2 CLOCK_POSITION = new Vector2(-5.7F, 4.45F);
-    private Vector2 TASKS_POSITION = new Vector2(-7.15F, 1.8F);
+    private Vector2 TASKS_POSITION = new Vector2(-5.7F, 0.85F);
 
     private Vector2 MED_SCALE = new Vector2(1.2F, 1.2F);
     private Vector2 LARGE_SCALE = new Vector2(1.8F, 1.8F);
@@ -83,7 +83,7 @@ public class RedArrow : MonoBehaviour
     {
         SetScale(MED_SCALE);
         PointTo(TASKS_POSITION);
-        PointInDirection(DOWN);
+        PointInDirection(LEFT);
     }
 
     public void PointToFirstTaskDescription()
