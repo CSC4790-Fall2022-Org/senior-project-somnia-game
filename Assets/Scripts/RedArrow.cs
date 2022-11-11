@@ -39,7 +39,9 @@ public class RedArrow : MonoBehaviour
 
     public void PointToDormButton()
     {
-        
+        PointInDirection(DOWN);
+        SetScale(LARGE_SCALE);
+        PointTo(new Vector2(-1F, 3.5F));
     }
 
     public void PointToStats()
