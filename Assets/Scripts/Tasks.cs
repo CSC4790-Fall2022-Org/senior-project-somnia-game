@@ -5,62 +5,60 @@ using UnityEngine;
 public class Tasks : MonoBehaviour
 {
     public GameObject TaskPrefab;
-    public GameObject[] tasks = new GameObject[10];
+    public List<GameObject> tasks = new List<GameObject>();
 
     Transform childCanvas;
-    int numTasks = 0;
 
     const int Y_SPACE_BETWEEN_TASKS = 45;
     Vector2 INITIAL_POSITION = new Vector2(129, 155);
 
-    public void show()
+    public void Show()
     {
         transform.localScale = new Vector2(1, 1);
     }
 
-    public void hide()
+    public void Hide()
     {
         transform.localScale = new Vector2(0, 0);
     }
 
-    public Vector2 getNextTaskPosition()
+    public Vector2 GetNextTaskPosition()
     {
         float nextPositionX = INITIAL_POSITION.x;
-        float nextPositionY = INITIAL_POSITION.y - (numTasks * Y_SPACE_BETWEEN_TASKS);
+        float nextPositionY = INITIAL_POSITION.y - (tasks.Count * Y_SPACE_BETWEEN_TASKS);
 
         Vector2 nextPosition = new Vector2(nextPositionX, nextPositionY);
 
         return nextPosition;
     }
 
-    public void addTask(string description)
+    public void AddTask(string description)
     {
-        Vector2 nextPosition = getNextTaskPosition();
+        Vector2 nextPosition = GetNextTaskPosition();
         GameObject newTask;
         newTask = Instantiate(TaskPrefab, new Vector2(0,0), Quaternion.identity);
         newTask.transform.SetParent(childCanvas, false);
         newTask.transform.localPosition = nextPosition;
 
-        newTask.GetComponent<Task>().setDescriptionAndTime(description);
+        newTask.GetComponent<Task>().SetDescriptionAndTime(description, "2:00PM");
 
-        tasks[numTasks] = newTask;
-        numTasks++;
+        tasks.Add(newTask);
 
         Debug.Log("Task added with description " + description);
         Debug.Log("Current tasks: " + tasks);
     }
 
-    public void checkTasks()
+    public void CheckTasks()
     {
 
     }
 
-    public void showTaskOverdue(int taskNumber)
+    public void ShowTaskOverdue(int taskNumber)
     {
-        if(numTasks >= taskNumber + 1)
+        if(tasks.Count >= taskNumber + 1)
         {
             GameObject taskToFail = tasks[taskNumber];
-            taskToFail.GetComponent<Task>().showFailure();
+            taskToFail.GetComponent<Task>().ShowFailure();
         }
         else
         {
@@ -68,12 +66,12 @@ public class Tasks : MonoBehaviour
         }
     }
 
-    public void showTaskDone(int taskNumber)
+    public void ShowTaskDone(int taskNumber)
     {
-        if(numTasks >= taskNumber + 1)
+        if(tasks.Count >= taskNumber + 1)
         {
             GameObject taskToComplete = tasks[taskNumber];
-            taskToComplete.GetComponent<Task>().showCompletion();
+            taskToComplete.GetComponent<Task>().ShowCompletion();
         }
         else
         {
@@ -84,7 +82,7 @@ public class Tasks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hide();
+        Hide();
         childCanvas = transform.GetChild(0);
     }
 

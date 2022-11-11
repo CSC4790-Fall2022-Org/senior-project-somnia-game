@@ -9,38 +9,37 @@ public class Task : MonoBehaviour
     public enum Status {pending, completed, failed};
     Status currStatus = Status.pending;
 
-    public void setDescriptionAndTime(string description)
+    public void SetDescriptionAndTime(string description, string time)
     {
-        string time = "2:00PM";
         taskDescriptionAndTime.text = description + "\n" + time;
     }
 
-    private void strikethrough()
+    private void Strikethrough()
     {
         taskDescriptionAndTime.fontStyle = FontStyles.Strikethrough;
     }
 
-    private void setColor(Color color)
+    private void SetColor(Color color)
     {
         taskDescriptionAndTime.color = color;
     }
 
-    public void showFailure()
+    public void ShowFailure()
     {
         if(currStatus != Status.completed)
         {
-            strikethrough();
+            Strikethrough();
             Color slightlyFadedRed = new(182f/255f, 77f/255f, 77f/255f);
-            setColor(slightlyFadedRed);
+            SetColor(slightlyFadedRed);
         }
     }
 
-    public void showCompletion()
+    public void ShowCompletion()
     {
         if(currStatus != Status.failed)
         { 
-            strikethrough();
-            setColor(Color.gray);
+            Strikethrough();
+            SetColor(Color.gray);
 
             GameObject checkmark = transform.GetChild(2).gameObject;
             checkmark.SetActive(true);
