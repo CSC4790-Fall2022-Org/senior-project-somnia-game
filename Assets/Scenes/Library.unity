@@ -600,6 +600,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331598002}
   m_CullTransparentMesh: 1
+--- !u!1001 &601241147
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2680590635415588811, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_Name
+      value: Quicktime
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952505488276141502, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4952505488276141502, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6440220261579282346, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1708779266}
+    - target: {fileID: 6440220261579282346, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440220261579282346, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462521524595253401, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462521524595253401, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462521524595253401, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462521524595253401, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462521524595253401, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462521524595253401, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462521524595253401, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462521524595253401, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462521524595253401, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462521524595253401, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462521524595253401, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2292615261876325808, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
 --- !u!1 &1162588505
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +826,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1708779266}
+    - target: {fileID: 506297469489425792, guid: 65c0af2f9ecc9dc44a66ee384c798808, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506297469489425795, guid: 65c0af2f9ecc9dc44a66ee384c798808, type: 3}
       propertyPath: m_Pivot.x
       value: 0
