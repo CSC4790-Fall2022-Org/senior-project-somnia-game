@@ -31,35 +31,68 @@ public class PlayerMovement : MonoBehaviour
 
     void checkInput()
     {
-        if(Input.GetKeyDown(shiftLeft) && movementBool && lane > 1){
-            if(lane == 3){
-            // this.player.transform.position = Vector2.MoveTowards(this.player.transform.position, pos2.transform.position, (speed * Time.deltaTime));
-            // transform.position = Vector2.MoveTowards(transform.position, new Vector2(-2.63f, -3.06f), (speed * Time.deltaTime));
+        if(Input.GetKeyDown(shiftLeft) && movementBool){
             Vector3 targetPosition = transform.position;
-            targetPosition.x = 10;
-            transform.position = targetPosition;
-            lane--;
+
+            if(lane == 2){
+                targetPosition.x = pos1.transform.position.x;
+                transform.position = targetPosition;
+                Debug.Log("Lane 1");
             }
 
-            // if(lane == 2){
-            // this.player.transform.position = Vector2.MoveTowards(player.position, pos1.position, step);
-            // lane--;
-            // }
+            if(lane == 3){
+                targetPosition.x = pos2.transform.position.x;
+                transform.position = targetPosition;
+                Debug.Log("Lane 2");
+            }
 
-            // if(lane == 4){
-            // this.player.transform.position = Vector2.MoveTowards(player.position, pos3.position, (speed * Time.deltaTime));
-            // lane--;
-            // }
+            if(lane == 4){
+                targetPosition.x = pos3.transform.position.x;
+                transform.position = targetPosition;
+                Debug.Log("Lane 3");
+            }
 
-            // if(lane == 5){
-            // this.player.transform.position = Vector2.MoveTowards(player.position, pos4.position, (speed * Time.deltaTime));
-            // lane--;
-            // }
+            if(lane == 5){
+                targetPosition.x = pos4.transform.position.x;
+                transform.position = targetPosition;
+                Debug.Log("Lane 4");
+            }
 
+            if(lane > 1){
+            lane--;
+            }
         }
-        if(Input.GetKeyDown(shiftRight) && movementBool && lane < 5){
-            // lane ++;
-            // movement.x = 3;
+
+        if(Input.GetKeyDown(shiftRight) && movementBool){
+            Vector3 targetPosition = transform.position;
+
+            if(lane == 1){
+                targetPosition.x = pos2.transform.position.x;
+                transform.position = targetPosition;
+                Debug.Log("Lane 2");
+            }
+
+            if(lane == 2){
+                targetPosition.x = pos3.transform.position.x;
+                transform.position = targetPosition;
+                Debug.Log("Lane 3");
+            }
+
+            if(lane == 3){
+                targetPosition.x = pos4.transform.position.x;
+                transform.position = targetPosition;
+                Debug.Log("Lane 4");
+            }
+
+            if(lane == 4){
+                targetPosition.x = pos5.transform.position.x;
+                transform.position = targetPosition;
+                Debug.Log("Lane 5");
+            }
+            
+            if(lane < 5){
+            lane++;
+            }
         }
     }
 
