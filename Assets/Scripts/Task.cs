@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using TMPro;
 
@@ -7,11 +8,22 @@ public class Task : MonoBehaviour
 {
     public TextMeshProUGUI taskDescriptionAndTime;
     public enum Status {pending, completed, failed};
-    Status currStatus = Status.pending;
+    Status CurrStatus = Status.pending;
+    public int id;
+    public string description;
+    public System.DateTime deadline;
 
-    public void SetDescriptionAndTime(string description, string time)
+    public void SetUp(int id, string description, string time)
     {
+        this.id = id;
+        this.description = description;
+        this.deadline = System.DateTime.ParseExact(time, "hh:mm tt", CultureInfo.CurrentCulture);
         taskDescriptionAndTime.text = description + "\n" + time;
+    }
+
+    public System.DateTime GetDeadline()
+    {
+        return this.deadline;
     }
 
     private void Strikethrough()
@@ -26,23 +38,26 @@ public class Task : MonoBehaviour
 
     public void ShowFailure()
     {
-        if(currStatus != Status.completed)
+        if(CurrStatus != Status.completed)
         {
             Strikethrough();
             Color slightlyFadedRed = new(182f/255f, 77f/255f, 77f/255f);
             SetColor(slightlyFadedRed);
+            CurrStatus = Status.failed;
         }
     }
 
     public void ShowCompletion()
     {
-        if(currStatus != Status.failed)
+        if(CurrStatus != Status.failed)
         { 
             Strikethrough();
             SetColor(Color.gray);
 
             GameObject checkmark = transform.GetChild(2).gameObject;
             checkmark.SetActive(true);
+
+            CurrStatus = Status.completed;
         }
     }
 
