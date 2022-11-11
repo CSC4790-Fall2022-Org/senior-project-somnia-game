@@ -505,6 +505,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 506297469372062190, guid: 65c0af2f9ecc9dc44a66ee384c798808, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506297469489425792, guid: 65c0af2f9ecc9dc44a66ee384c798808, type: 3}
       propertyPath: m_Camera
       value: 
@@ -815,7 +819,7 @@ GameObject:
   - component: {fileID: 1861380669}
   - component: {fileID: 1861380670}
   m_Layer: 0
-  m_Name: bedroom day big
+  m_Name: background image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
