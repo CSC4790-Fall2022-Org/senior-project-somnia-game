@@ -13,48 +13,99 @@ public class RedArrow : MonoBehaviour
     private Vector2 HAPPY_POSITION = new Vector2(-5.7F, 3.5F);
     private Vector2 STRESS_POSITION = new Vector2(-5.7F, 3.1F);
     private Vector2 CLOCK_POSITION = new Vector2(-6.1F, 4.45F);
+    private Vector2 TASKS_POSITION = new Vector2(-7.15F, 1.8F);
 
-    public void pointTo(Vector2 position)
+    private Vector2 MED_SCALE = new Vector2(1.2F, 1.2F);
+    private Vector2 LARGE_SCALE = new Vector2(1.8F, 1.8F);
+
+    private Vector3 LEFT = new Vector3(0F, 0F, 0F);
+    private Vector3 DOWN = new Vector3(0F, 0F, 90F);
+    private Vector3 RIGHT = new Vector3(0F, 0F, 180F);
+
+    public void PointTo(Vector2 position)
     {
         transform.position = position;
     }
 
-    public void pointToDormButton()
+    public void SetScale(Vector2 scale)
+    {
+        transform.localScale = scale;
+    }
+
+    public void PointInDirection(Vector3 direction)
+    {
+        transform.localEulerAngles = direction;
+    }
+
+    public void PointToDormButton()
     {
         
     }
 
-    public void pointToStats()
+    public void PointToStats()
     {
-        transform.localScale = new Vector2(1.8F, 1.8F);
-        pointTo(STATS_POSITION);
+        SetScale(LARGE_SCALE);
+        PointTo(STATS_POSITION);
+        PointInDirection(LEFT);
     }
 
-    public void pointToEnergy()
+    public void PointToEnergy()
     {
-        transform.localScale = new Vector2(1.2F, 1.2F);
-        pointTo(ENERGY_POSITION);
+        SetScale(MED_SCALE);
+        PointTo(ENERGY_POSITION);
+        PointInDirection(LEFT);
     }
 
-    public void pointToHappiness()
+    public void PointToHappiness()
     {
-        transform.localScale = new Vector2(1.2F, 1.2F);
-        pointTo(HAPPY_POSITION);
+        SetScale(MED_SCALE);
+        PointTo(HAPPY_POSITION);
+        PointInDirection(LEFT);
     }
 
-    public void pointToStress()
+    public void PointToStress()
     {
-        transform.localScale = new Vector2(1.2F, 1.2F);
-        pointTo(STRESS_POSITION);
+        SetScale(MED_SCALE);
+        PointTo(STRESS_POSITION);
+        PointInDirection(LEFT);
     }
 
-    public void pointToClock()
+    public void PointToClock()
     {
-        transform.localScale = new Vector2(1.2F, 1.2F);
-        pointTo(CLOCK_POSITION);
+        SetScale(MED_SCALE);
+        PointTo(CLOCK_POSITION);
+        PointInDirection(LEFT);
     }
 
-    public void hide()
+    public void PointToTasksButton()
+    {
+        SetScale(MED_SCALE);
+        PointTo(TASKS_POSITION);
+        PointInDirection(DOWN);
+    }
+
+    public void PointToFirstTaskDescription()
+    {
+        PointTo(new Vector2(-2.2F, 3.5F));
+        SetScale(MED_SCALE);
+        PointInDirection(RIGHT);
+    }
+
+    public void PointToFirstTaskDeadline()
+    {
+        PointTo(new Vector2(-2.2F, 3F));
+        SetScale(MED_SCALE);
+        PointInDirection(RIGHT);
+    }
+
+    public void PointToSecondTaskDescription()
+    {
+        PointTo(new Vector2(-2.2F, 2.5F));
+        SetScale(MED_SCALE);
+        PointInDirection(RIGHT);
+    }
+
+    public void Hide()
     {
         gameObject.SetActive(false);
     }
