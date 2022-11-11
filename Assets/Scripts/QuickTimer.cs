@@ -6,6 +6,7 @@ using TMPro;
 
 public class QuickTimer : MonoBehaviour
 {
+
     public float timeRemaining;
     public TextMeshProUGUI timerText;
     // Start is called before the first frame update
@@ -27,7 +28,7 @@ public class QuickTimer : MonoBehaviour
             }
         }
         else{
-            //stuff here
+            gameObject.SetActive(false);
         }
     
 
