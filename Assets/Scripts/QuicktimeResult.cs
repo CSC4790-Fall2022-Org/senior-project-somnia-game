@@ -20,4 +20,7 @@ public class QuicktimeResult : MonoBehaviour
     public void setResult(string result){
         enText.SetText(result);
     }
+    public void SetActive(){
+        gameObject.SetActive(true);
+    }
 }
