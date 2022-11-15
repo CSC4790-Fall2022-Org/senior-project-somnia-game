@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tasks : MonoBehaviour
 {
@@ -13,25 +14,7 @@ public class Tasks : MonoBehaviour
     const int Y_SPACE_BETWEEN_TASKS = 45;
     Vector2 INITIAL_POSITION = new Vector2(129, 155);
 
-    Dictionary<int, Dictionary<string, string>> allTasks = new Dictionary<int, Dictionary<string, string>>
-    {
-        {
-            0,
-            new Dictionary<string,string>
-            {
-                {"description", "Check emails" },
-                {"time", "08:00 PM" }
-            }
-        },
-        {
-            1,
-            new Dictionary<string, string>
-            {
-                {"description", "Watch the sunset" },
-                {"time", "06:00 PM" }
-            }
-        }
-    };
+    Dictionary<int, Dictionary<string, string>> allTasks = new Dictionary<int, Dictionary<string, string>> { };
 
     public void Show()
     {
@@ -115,14 +98,23 @@ public class Tasks : MonoBehaviour
         }
     }
 
+    public void UpdateGlobalTasks(Scene current)
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         Hide();
         childCanvas = transform.GetChild(0);
 
+        this.allTasks = Globals.allTasks;
+
         AddTask(0);
         AddTask(1);
+
+        SceneManager.sceneUnloaded += UpdateGlobalTasks;
     }
 
     // Update is called once per frame

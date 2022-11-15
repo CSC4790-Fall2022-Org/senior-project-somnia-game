@@ -15,6 +15,26 @@ public class Globals : MonoBehaviour
     public static int hour = 17;
     public static int minute = 0;
 
+    public static Dictionary<int, Dictionary<string, string>> allTasks = new Dictionary<int, Dictionary<string, string>>
+    {
+        {
+            0,
+            new Dictionary<string,string>
+            {
+                {"description", "Check emails" },
+                {"time", "08:00 PM" }
+            }
+        },
+        {
+            1,
+            new Dictionary<string, string>
+            {
+                {"description", "Watch the sunset" },
+                {"time", "06:00 PM" }
+            }
+        }
+    };
+
     private void Awake()
     {
         Instance = this;
