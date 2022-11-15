@@ -715,6 +715,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1863694330406219534, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_text
+      value: 'You make a witty remark and refuse to engage
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863694330406219534, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_fontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863694330406219534, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2680590635415588811, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
       propertyPath: m_Name
       value: Quicktime
@@ -750,6 +764,10 @@ PrefabInstance:
     - target: {fileID: 2955494341447880670, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642535672903489495, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
+      propertyPath: m_text
+      value: What?
       objectReference: {fileID: 0}
     - target: {fileID: 4952505488276141502, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
       propertyPath: m_fontAsset
@@ -913,7 +931,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7734579672226082448, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
-      value: '"Your stress increased because [reason]"'
+      value: The librarian ridicules you publicly and reminds you of your overdue
+        assignments. You become more stressed.
       objectReference: {fileID: 0}
     - target: {fileID: 7734579672226082448, guid: 7289a8afce1854af3ba25edb515baab6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1189,7 +1208,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Your happiness increased because [reason]]
+          m_StringArgument: The librarian smiles. "That is correct my child, the
+            only winning move is not to play. " You feel happier.
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!1001 &1203456694

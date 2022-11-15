@@ -39,7 +39,7 @@ public class QuickTimer : MonoBehaviour
         }
         else{
             r1.SetActive();
-            r1.setResult("You yourself in front of your peers. Your Stress increased and your happiness decreased!");
+            r1.setResult("You embarass yourself in front of your peers. Your Stress increased and your happiness decreased!");
             stats.changeHappiness(-10);
             stats.changeStress(20);
             gameObject.SetActive(false);
