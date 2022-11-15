@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class timepassage : MonoBehaviour
 {
     public int hour;
@@ -15,8 +17,16 @@ public class timepassage : MonoBehaviour
     //}
     void Start()
     {
-        hour = 17;
-        minute = 0;
+        this.hour = Globals.hour;
+        this.minute = Globals.minute;
+
+        SceneManager.sceneUnloaded += UpdateGlobalTime;
+    }
+
+    void UpdateGlobalTime(Scene current)
+    {
+        Globals.hour = this.hour;
+        Globals.minute = this.minute;
     }
 
     // Update is called once per frame
