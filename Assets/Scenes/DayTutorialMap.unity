@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 229979166}
   m_Layer: 0
   m_Name: Game BGM
-  m_TagString: Untagged
+  m_TagString: DefaultMusic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
