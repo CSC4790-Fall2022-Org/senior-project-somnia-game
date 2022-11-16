@@ -14,8 +14,6 @@ public class Tasks : MonoBehaviour
     const int Y_SPACE_BETWEEN_TASKS = 45;
     Vector2 INITIAL_POSITION = new Vector2(129, 155);
 
-    Dictionary<int, Dictionary<string, string>> allTasks = new Dictionary<int, Dictionary<string, string>> { };
-
     public void Show()
     {
         transform.localScale = new Vector2(1, 1);
@@ -38,20 +36,26 @@ public class Tasks : MonoBehaviour
 
     public void AddTask(int id)
     {
-        Vector2 nextPosition = GetNextTaskPosition();
         GameObject newTask;
         newTask = Instantiate(TaskPrefab, new Vector2(0,0), Quaternion.identity);
-        newTask.transform.SetParent(childCanvas, false);
-        newTask.transform.localPosition = nextPosition;
 
-        string description = allTasks[id]["description"];
-        string time = allTasks[id]["time"];
+        string description = Globals.allTasks[id]["description"];
+        string time = Globals.allTasks[id]["time"];
         newTask.GetComponent<Task>().SetUp(id, description, time);
 
+        RenderTask(newTask);
         tasks.Add(newTask);
 
         Debug.Log("Task added with description " + description);
         Debug.Log("Current tasks: " + tasks.ToString());
+    }
+
+    public void RenderTask(GameObject task)
+    {
+        Vector2 nextPosition = GetNextTaskPosition();
+
+        task.transform.SetParent(childCanvas, false);
+        task.transform.localPosition = nextPosition;
     }
 
     public void CheckTasks()
@@ -108,8 +112,6 @@ public class Tasks : MonoBehaviour
     {
         Hide();
         childCanvas = transform.GetChild(0);
-
-        this.allTasks = Globals.allTasks;
 
         AddTask(0);
         AddTask(1);
