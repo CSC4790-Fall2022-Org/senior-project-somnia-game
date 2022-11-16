@@ -15,6 +15,8 @@ public class Globals : MonoBehaviour
     public static int hour = 17;
     public static int minute = 0;
 
+    public static bool tutorialDone = false;
+
     public static Dictionary<int, Dictionary<string, string>> allTasks = new Dictionary<int, Dictionary<string, string>>
     {
         {
