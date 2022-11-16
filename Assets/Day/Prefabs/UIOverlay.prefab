@@ -774,6 +774,7 @@ GameObject:
   - component: {fileID: 506297470135600404}
   - component: {fileID: 506297470135600405}
   - component: {fileID: 506297470135600410}
+  - component: {fileID: 4917266888549085790}
   m_Layer: 6
   m_Name: TasksButton
   m_TagString: Untagged
@@ -895,6 +896,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4917266888549085790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506297470135600408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553c1e88b76a65c4bac572381818f260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 072c2abeb2b29eb49976721f8e4e9aae, type: 3}
+  _volume: 0.1
 --- !u!1001 &506297470146945712
 PrefabInstance:
   m_ObjectHideFlags: 0

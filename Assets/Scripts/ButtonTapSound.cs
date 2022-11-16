@@ -16,4 +16,13 @@
             _audioSource.volume = _volume;
             GetComponent<Button> ().onClick.AddListener (() => _audioSource.Play ());
         }
+
+        public void playSound(AudioSource _audioSource) {
+            //_audioSource = gameObject.AddComponent<AudioSource> ();
+            //if (_audioClip != null)
+            //    _audioSource.clip = _audioClip;
+           // _audioSource.playOnAwake = false;
+           // _audioSource.volume = _volume;
+            GetComponent<Button> ().onClick.AddListener (() => _audioSource.Play ());
+        }
     }
