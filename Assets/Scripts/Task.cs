@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Task : MonoBehaviour
@@ -61,10 +62,18 @@ public class Task : MonoBehaviour
         }
     }
 
+    //public void OnDisable()
+    //{
+    //    Debug.Log("don't destroy me!");
+    //    //transform.SetParent(null, false);
+    //    transform.parent = null;
+    //    DontDestroyOnLoad(gameObject);
+    //}
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

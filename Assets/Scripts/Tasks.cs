@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Tasks : MonoBehaviour
 {
     public GameObject TaskPrefab;
-    public List<GameObject> tasks = new List<GameObject>(5);
+    public List<GameObject> tasks = new List<GameObject>();
 
     Transform childCanvas;
 
@@ -22,16 +22,6 @@ public class Tasks : MonoBehaviour
     public void Hide()
     {
         transform.localScale = new Vector2(0, 0);
-    }
-
-    public Vector2 GetNextTaskPosition()
-    {
-        float nextPositionX = INITIAL_POSITION.x;
-        float nextPositionY = INITIAL_POSITION.y - (tasks.Count * Y_SPACE_BETWEEN_TASKS);
-
-        Vector2 nextPosition = new Vector2(nextPositionX, nextPositionY);
-
-        return nextPosition;
     }
 
     public void AddTask(int id)
@@ -56,6 +46,17 @@ public class Tasks : MonoBehaviour
 
         task.transform.SetParent(childCanvas, false);
         task.transform.localPosition = nextPosition;
+    }
+
+
+    public Vector2 GetNextTaskPosition()
+    {
+        float nextPositionX = INITIAL_POSITION.x;
+        float nextPositionY = INITIAL_POSITION.y - (tasks.Count * Y_SPACE_BETWEEN_TASKS);
+
+        Vector2 nextPosition = new Vector2(nextPositionX, nextPositionY);
+
+        return nextPosition;
     }
 
     public void CheckTasks()
@@ -102,9 +103,27 @@ public class Tasks : MonoBehaviour
         }
     }
 
-    public void UpdateGlobalTasks(Scene current)
+    public void OnDisable()
     {
+        foreach (GameObject task in this.tasks)
+        {
+            task.transform.SetParent(null, false);
+            DontDestroyOnLoad(task);
+        }
+        Globals.tasks = this.tasks;
+    }
+    public void UpdateExistingTasks(Scene current)
+    {
+        Globals.tasks = this.tasks;
+    }
 
+    public void GetExistingTasks()
+    {
+        foreach (GameObject task in Globals.tasks)
+        {
+            RenderTask(task);
+            this.tasks.Add(task);
+        }
     }
 
     // Start is called before the first frame update
@@ -113,10 +132,19 @@ public class Tasks : MonoBehaviour
         Hide();
         childCanvas = transform.GetChild(0);
 
-        AddTask(0);
-        AddTask(1);
-
-        SceneManager.sceneUnloaded += UpdateGlobalTasks;
+        if(Globals.tasks.Count == 0)
+        {
+            Debug.Log("there are no existing tasks");
+            AddTask(0);
+            AddTask(1);
+        }
+        else
+        {
+            Debug.Log("there are existing tasks");
+            GetExistingTasks();
+        }
+        
+        //SceneManager.sceneUnloaded += UpdateExistingTasks;
     }
 
     // Update is called once per frame
