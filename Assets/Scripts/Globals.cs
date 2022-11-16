@@ -37,6 +37,8 @@ public class Globals : MonoBehaviour
         }
     };
 
+    public static List<GameObject> tasks = new List<GameObject>();
+
     private void Awake()
     {
         Instance = this;
