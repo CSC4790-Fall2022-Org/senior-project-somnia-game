@@ -6,19 +6,17 @@ using DialogueEditor;
 public class DayTutorialScript : MonoBehaviour
 {
     public NPCConversation TutorialConversation;
+    private GameObject redArrow;
 
-    public void FinishTutorial()
+    private void Awake()
     {
-        Globals.tutorialDone = true;
-    }
+        redArrow = GameObject.Find("RedArrow");
+}
 
     // Start is called before the first frame update
     void Start()
     {
-        if(!Globals.tutorialDone)
-        {
-            ConversationManager.Instance.StartConversation(TutorialConversation);
-        }
+        ConversationManager.Instance.StartConversation(TutorialConversation);
     }
 
     // Update is called once per frame

@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - DefaultMusic
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -39,12 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2108767009
-    locked: 0
-  - name: Tasks
-    uniqueID: 3216775121
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

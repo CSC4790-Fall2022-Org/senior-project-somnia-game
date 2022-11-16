@@ -17,25 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dormroom.unity
     guid: 3b774318512404f6c8d61aff134cf1d6
-  - enabled: 1
-    path: Assets/Scenes/map.unity
-    guid: 4d629b64d860c4948a50844c39869d10
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Cafeteria.unity
-    guid: 668779fd7e2284e7683b6650af7b68a7
-  - enabled: 1
-    path: Assets/Scenes/Library.unity
-    guid: 09f70803cc2bc4c4481a007abe7f26f1
-  - enabled: 1
-    path: Assets/Scenes/classroom1.unity
-    guid: 6e58c25f21323624cb88b2e1f0a6237a
-  - enabled: 1
-    path: Assets/Scenes/NightTutorial.unity
-    guid: b4a9605809774bd43b8343a6a2fb32f2
   m_configObjects: {}
