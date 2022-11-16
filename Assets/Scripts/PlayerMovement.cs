@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     int lane = 3;
     Vector2 playerPosition = new Vector2(-2, -3);
     bool movementBool = true;
+    public AudioSource errorSound;
+    public AudioSource moveSound;
 
 
     // Start is called before the first frame update
@@ -60,6 +62,9 @@ public class PlayerMovement : MonoBehaviour
 
             if(lane > 1){
             lane--;
+            moveSound.Play();
+            } else{
+                errorSound.Play();
             }
         }
 
@@ -92,6 +97,9 @@ public class PlayerMovement : MonoBehaviour
             
             if(lane < 5){
             lane++;
+            moveSound.Play();
+            } else{
+                errorSound.Play();
             }
         }
     }
