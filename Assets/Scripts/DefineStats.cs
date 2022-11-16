@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DefineStats : MonoBehaviour
 {
 
     public int stress;
-    public int hunger;
     public int happiness;
     public int energy;
     public TextMeshProUGUI enText;
@@ -21,10 +21,13 @@ public class DefineStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stress = 40;
-        happiness = 60;
-        energy = 90;
+        this.energy = Globals.energy;
+        this.stress = Globals.stress;
+        this.happiness = Globals.happiness;
+
+        SceneManager.sceneUnloaded += UpdateGlobalStats;
     }
+
    public void changeStress(int num){
         stress += num;
         if(stress > 100){
@@ -51,6 +54,22 @@ public class DefineStats : MonoBehaviour
         else if(happiness <0){
             happiness = 0;
         }
+    }
+    public int getStress(){
+        return stress;
+    }
+    public int getEnergy(){
+        return energy;
+    }
+    public int getHappiness(){
+        return happiness;
+    }
+
+    public void UpdateGlobalStats(Scene current)
+    {
+        Globals.energy = this.energy;
+        Globals.stress = this.stress;
+        Globals.happiness = this.happiness;
     }
 
     // Update is called once per frame

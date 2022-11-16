@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class timepassage : MonoBehaviour
 {
     public int hour;
@@ -15,34 +17,60 @@ public class timepassage : MonoBehaviour
     //}
     void Start()
     {
-        hour = 8;
-        minute = 0;
+        this.hour = Globals.hour;
+        this.minute = Globals.minute;
+
+        SceneManager.sceneUnloaded += UpdateGlobalTime;
+    }
+
+    void UpdateGlobalTime(Scene current)
+    {
+        Globals.hour = this.hour;
+        Globals.minute = this.minute;
     }
 
     // Update is called once per frame
     void Update()
     {
-        String timeText ="";
-        if(hour<=12){
-            if(minute<10){
-                timeText = hour+":0"+minute+ "AM";
-        }
-            else{
-                timeText = hour+":"+minute+" AM";
-            }
-        }
-        else{
-            if(minute<10){
-                timeText = (hour-12)+":0"+minute+ "PM";
-        }
-            else{
-                timeText = (hour-12)+":"+minute+" PM";
-            }
-        }
-        
-        leText.SetText(timeText);
+        string timeText;
+        int hourInTwelveHrTime;
+        string hourText;
+        string minuteText;
+        string AMPMText;
 
+        if(hour <= 12)
+        {
+            hourInTwelveHrTime = hour;
+            AMPMText = "AM";
+        }
+        else
+        {
+            hourInTwelveHrTime = hour - 12;
+            AMPMText = "PM";
+        }
+
+        if (hourInTwelveHrTime < 10)
+        {
+            hourText = "0" + hourInTwelveHrTime;
+        }
+        else
+        {
+            hourText = "" + hourInTwelveHrTime;
+        }
+
+        if (minute < 10)
+        {
+            minuteText = "0" + minute;
+        }
+        else
+        {
+            minuteText = "" + minute;
+        }
+
+        timeText = hourText + ":" + minuteText + " " + AMPMText;
+        leText.SetText(timeText);
     }
+
     public void addTime(){
         hour+=1;
         if(hour == 25){
@@ -58,5 +86,10 @@ public class timepassage : MonoBehaviour
             hour = 0;
         }
         }
+    }
+
+    public string GetCurrentTime()
+    {
+        return leText.text.ToString();
     }
 }
