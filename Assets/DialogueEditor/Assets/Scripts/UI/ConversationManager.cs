@@ -375,6 +375,14 @@ namespace DialogueEditor
                     SetState(eState.TransitioningOptionsOn);
                 }
             }
+
+            // Finish in advance if space or leftclick is pressed
+            if (Input.GetKeyDown(KeyCode.Space) /*|| Input.GetMouseButtonDown(0)*/)
+            {
+                m_scrollIndex = m_targetScrollTextCount;
+                DialogueText.maxVisibleCharacters = m_scrollIndex;
+                SetState(eState.TransitioningOptionsOn);
+            }
         }
 
         private void TransitionOptionsOn_Update()
