@@ -549,7 +549,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3bc54756933974dbab341f37936bf3f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -569,7 +569,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739353566}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -1.4, y: -2.09, z: 0}
+  m_LocalPosition: {x: -8.12, y: 1.93, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -844,6 +844,7 @@ GameObject:
   - component: {fileID: 1307082687}
   - component: {fileID: 1307082686}
   - component: {fileID: 1307082688}
+  - component: {fileID: 1307082689}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -966,30 +967,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1931734013}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2140855869}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1076472593}
         m_TargetAssemblyTypeName: DayTutorialScript, Assembly-CSharp
@@ -2045,6 +2022,61 @@ MonoBehaviour:
   TMPFont: {fileID: 11400000, guid: 748b53e8d1356476c8cb58f06db57986, type: 2}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
+--- !u!114 &1307082689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307082651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 739353566}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 739353569}
+        m_TargetAssemblyTypeName: RedArrow, Assembly-CSharp
+        m_MethodName: PointToMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2140855869}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  NodeID: 43
+  TMPFont: {fileID: 11400000, guid: 748b53e8d1356476c8cb58f06db57986, type: 2}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
 --- !u!1 &1412298788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,52 +2106,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentIDCounter: 43
-  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":19}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":236.150024,\"yPos\":-960.199951},\"ID\":18,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Check
-    and read emails for 15 minutes\",\"parentUIDs\":[17],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":24}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":250.150024,\"yPos\":-440.199951},\"ID\":23,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Play
-    game for an hour\",\"parentUIDs\":[22],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":27}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":257.150024,\"yPos\":-137.199951},\"ID\":26,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Take
-    a nap for an hour\",\"parentUIDs\":[25],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":503,\"yPos\":-2472},\"ID\":40,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Continue\",\"parentUIDs\":[3],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":42}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-34,\"yPos\":-2447},\"ID\":41,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Skip
-    tutorial\",\"parentUIDs\":[3],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":229.75,\"yPos\":-2609},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Welcome
-    to your dormitory! Home sweet home :)\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":null,\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":40},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":41}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":231,\"yPos\":-2460.5},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Let\u2019s
-    take a moment to gather ourselves.\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":null,\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":227.150024,\"yPos\":-2317.2},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"In
-    the upper left corner are your stats. You have energy, happiness, and stress.\",\"parentUIDs\":[40],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":7}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":229.150024,\"yPos\":-2191.2},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Energy
-    is your general physical reserves. Everything that takes time will take energy.\",\"parentUIDs\":[5],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":230.150024,\"yPos\":-2079.2},\"ID\":7,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"For
+  CurrentIDCounter: 44
+  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":19}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":305.150024,\"yPos\":-1178.2},\"ID\":18,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Check
+    and read emails for 15 minutes\",\"parentUIDs\":[17],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":24}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":319.150024,\"yPos\":-658.199951},\"ID\":23,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Play
+    game for an hour\",\"parentUIDs\":[22],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":27}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":326.150024,\"yPos\":-355.199951},\"ID\":26,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Take
+    a nap for an hour\",\"parentUIDs\":[25],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":572,\"yPos\":-2690},\"ID\":40,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Continue\",\"parentUIDs\":[3],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":42}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":35,\"yPos\":-2665},\"ID\":41,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Skip
+    tutorial\",\"parentUIDs\":[3],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":298.75,\"yPos\":-2826},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Welcome
+    to your dormitory! Home sweet home :)\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":null,\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":40},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":41}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":300,\"yPos\":-2678.5},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Let\u2019s
+    take a moment to gather ourselves.\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":null,\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":296.150024,\"yPos\":-2535.2},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"In
+    the upper left corner are your stats. You have energy, happiness, and stress.\",\"parentUIDs\":[40],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":7}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":298.150024,\"yPos\":-2409.2},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Energy
+    is your general physical reserves. Everything that takes time will take energy.\",\"parentUIDs\":[5],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":299.150024,\"yPos\":-2297.2},\"ID\":7,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"For
     example, walking between locations, doing your homework, and going to class will
-    take energy.\",\"parentUIDs\":[6],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":9}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":229.150024,\"yPos\":-1961.2},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Food
-    and sleep will replenish and increase your energy!\",\"parentUIDs\":[7],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":228.150024,\"yPos\":-1843.2},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Happiness
-    tells you if you\u2019re balancing school with your free time.\",\"parentUIDs\":[8],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":11}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":230.150024,\"yPos\":-1729.2},\"ID\":10,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"It\u2019s
-    decreased by doing stuff you don\u2019t like, such as school-related things.\",\"parentUIDs\":[9],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":12}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":230.150024,\"yPos\":-1614.2},\"ID\":11,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You
+    take energy.\",\"parentUIDs\":[6],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":9}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":298.150024,\"yPos\":-2179.2},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Food
+    and sleep will replenish and increase your energy!\",\"parentUIDs\":[7],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":297.150024,\"yPos\":-2061.2},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Happiness
+    tells you if you\u2019re balancing school with your free time.\",\"parentUIDs\":[8],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":11}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":299.150024,\"yPos\":-1947.2},\"ID\":10,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"It\u2019s
+    decreased by doing stuff you don\u2019t like, such as school-related things.\",\"parentUIDs\":[9],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":12}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":299.150024,\"yPos\":-1832.2},\"ID\":11,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You
     can increase it by doing hobbies or talking with friends, such as by playing
-    video games. \",\"parentUIDs\":[10],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":14}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":230.150024,\"yPos\":-1494.2},\"ID\":12,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Stress
+    video games. \",\"parentUIDs\":[10],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":14}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":299.150024,\"yPos\":-1712.2},\"ID\":12,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Stress
     is an indication of how much is on your plate. You mainly become stressed by
-    missing deadlines.\",\"parentUIDs\":[11],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":234.150024,\"yPos\":-1386.2},\"ID\":14,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Stress
-    can be decreased by completing tasks on time.\",\"parentUIDs\":[12],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":16}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":234.150024,\"yPos\":-1271.2},\"ID\":15,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"The
+    missing deadlines.\",\"parentUIDs\":[11],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":303.150024,\"yPos\":-1604.2},\"ID\":14,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Stress
+    can be decreased by completing tasks on time.\",\"parentUIDs\":[12],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":16}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":303.150024,\"yPos\":-1489.2},\"ID\":15,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"The
     current time can be found directly above your stats. Time will pass with almost
-    every action you take.\",\"parentUIDs\":[14],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":29}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":235.150024,\"yPos\":-1168.2},\"ID\":16,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You
+    every action you take.\",\"parentUIDs\":[14],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":29}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":304.150024,\"yPos\":-1386.2},\"ID\":16,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You
     will also need to keep track of time to make sure you\u2019re completing tasks
-    on time.\",\"parentUIDs\":[15],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":18}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":235.150024,\"yPos\":-1058.2},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Let\u2019s
-    try it all out! How about you try checking all the emails from your professors.\",\"parentUIDs\":[30],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":20}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":238.150024,\"yPos\":-872.199951},\"ID\":19,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Whew,
-    that\u2019s a lot to keep track of. It took 15 minutes and some of your energy.\",\"parentUIDs\":[18],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":31}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":240.150024,\"yPos\":-761.199951},\"ID\":20,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"On
+    on time.\",\"parentUIDs\":[15],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":18}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":304.150024,\"yPos\":-1276.2},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Let\u2019s
+    try it all out! How about you try checking all the emails from your professors.\",\"parentUIDs\":[30],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":20}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":307.150024,\"yPos\":-1090.2},\"ID\":19,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Whew,
+    that\u2019s a lot to keep track of. It took 15 minutes and some of your energy.\",\"parentUIDs\":[18],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":31}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":309.150024,\"yPos\":-979.199951},\"ID\":20,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"On
     the bright side, you don\u2019t have to worry about it anymore now, so you feel
-    less stressed!\",\"parentUIDs\":[19],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":22}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":243.150024,\"yPos\":-656.199951},\"ID\":21,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"On
+    less stressed!\",\"parentUIDs\":[19],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":22}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":312.150024,\"yPos\":-874.199951},\"ID\":21,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"On
     the other hand, that was time away from doing other stuff, so you also feel slightly
-    less happy. You want to catch up on a video game from your backlog!\",\"parentUIDs\":[31],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":23}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":247.150024,\"yPos\":-543.199951},\"ID\":22,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Let\u2019s
-    play the video game...\",\"parentUIDs\":[21],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":25}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":254.150024,\"yPos\":-357.199951},\"ID\":24,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"That
+    less happy. You want to catch up on a video game from your backlog!\",\"parentUIDs\":[31],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":23}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":316.150024,\"yPos\":-761.199951},\"ID\":22,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Let\u2019s
+    play the video game...\",\"parentUIDs\":[21],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":25}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":323.150024,\"yPos\":-575.199951},\"ID\":24,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"That
     was fun! Your happiness increased. You played for an hour, and your energy has
-    diminished again.\",\"parentUIDs\":[23],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":26}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":253.150024,\"yPos\":-247.199951},\"ID\":25,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You\u2019re
-    getting sleepy, so how about a nap?\",\"parentUIDs\":[24],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":33}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":257.150024,\"yPos\":-63.19995},\"ID\":27,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You
-    take an hour-long nap. You feel refreshed. Your energy has gone up!\",\"parentUIDs\":[26],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":253.150024,\"yPos\":344.800049},\"ID\":28,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Those
-    are the basics of the game during the daytime. Click the 'Zz' button on your
-    phone whenever you want to go to sleep.\",\"parentUIDs\":[34],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":30}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":545,\"yPos\":-1172},\"ID\":29,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Speaking
+    diminished again.\",\"parentUIDs\":[23],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":26}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":322.150024,\"yPos\":-465.199951},\"ID\":25,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You\u2019re
+    getting sleepy, so how about a nap?\",\"parentUIDs\":[24],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":33}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":326.150024,\"yPos\":-281.199951},\"ID\":27,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You
+    take an hour-long nap. You feel refreshed. Your energy has gone up!\",\"parentUIDs\":[26],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":43}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":322.150024,\"yPos\":126.800049},\"ID\":28,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Now
+    how about we check out some of the other places on campus?\",\"parentUIDs\":[34],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":30}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":614,\"yPos\":-1390},\"ID\":29,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Speaking
     of tasks, let's check on the ones you have to do. Check your todo list on your
-    phone!\",\"parentUIDs\":[16],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":850,\"yPos\":-1170},\"ID\":30,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Every
+    phone!\",\"parentUIDs\":[16],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":919,\"yPos\":-1388},\"ID\":30,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Every
     task has a deadline. You need to do it before the time listed. If you don't,
-    then you may gain stress!\",\"parentUIDs\":[29],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":21}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":492,\"yPos\":-758},\"ID\":31,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Look,
-    it's been checked off your tasks list!\",\"parentUIDs\":[20],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":34}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":255,\"yPos\":47},\"ID\":33,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oh
-    yea, wasn't there another task you had to do?\",\"parentUIDs\":[27],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":28}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":263,\"yPos\":158},\"ID\":34,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oops,
+    then you may gain stress!\",\"parentUIDs\":[29],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":21}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":561,\"yPos\":-976},\"ID\":31,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Look,
+    it's been checked off your tasks list!\",\"parentUIDs\":[20],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":34}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":324,\"yPos\":-171},\"ID\":33,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oh
+    yea, wasn't there another task you had to do?\",\"parentUIDs\":[27],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":28}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":332,\"yPos\":-60},\"ID\":34,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oops,
     looks like you missed it. Don't worry, it's a minor thing, so it didn't affect
-    you in any way.\",\"parentUIDs\":[33],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-99,\"yPos\":-2329},\"ID\":42,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You
-    checked emails, played a video game, and took a nap.\",\"parentUIDs\":[41],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+    you in any way.\",\"parentUIDs\":[33],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-30,\"yPos\":-2547},\"ID\":42,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You
+    checked emails, played a video game, and took a nap.\",\"parentUIDs\":[41],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":317,\"yPos\":260},\"ID\":43,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Let's
+    go back to the map.\",\"parentUIDs\":[28],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -2158,6 +2190,7 @@ MonoBehaviour:
   - {fileID: 1307082687}
   - {fileID: 1307082686}
   - {fileID: 1307082688}
+  - {fileID: 1307082689}
   ContinueFont: {fileID: 11400000, guid: 748b53e8d1356476c8cb58f06db57986, type: 2}
   EndConversationFont: {fileID: 11400000, guid: 748b53e8d1356476c8cb58f06db57986, type: 2}
   Event:
@@ -2173,24 +2206,12 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2047262103}
-        m_TargetAssemblyTypeName: Tasks, Assembly-CSharp
-        m_MethodName: Hide
+      - m_Target: {fileID: 739353569}
+        m_TargetAssemblyTypeName: RedArrow, Assembly-CSharp
+        m_MethodName: PointToMap
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1931734013}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2203,18 +2224,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
         m_MethodName: set_interactable
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1076472593}
-        m_TargetAssemblyTypeName: DayTutorialScript, Assembly-CSharp
-        m_MethodName: FinishTutorial
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
