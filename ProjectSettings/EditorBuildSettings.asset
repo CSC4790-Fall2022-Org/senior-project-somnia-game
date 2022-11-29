@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/classroom1.unity
     guid: 6e58c25f21323624cb88b2e1f0a6237a
   - enabled: 1
+    path: Assets/Scenes/NightDialogue.unity
+    guid: a82417533fd9e0349925aab48a05fc3b
+  - enabled: 1
     path: Assets/Scenes/NightTutorial.unity
     guid: b4a9605809774bd43b8343a6a2fb32f2
   m_configObjects: {}
