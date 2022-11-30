@@ -134,6 +134,7 @@ public class Tasks : MonoBehaviour
             Debug.Log("there are no existing tasks");
             AddTask(0);
             AddTask(1);
+            AddTask(2);
         }
         else
         {
