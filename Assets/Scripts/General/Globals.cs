@@ -41,166 +41,165 @@ public class Globals : MonoBehaviour
     public static List<GameObject> tasks = new List<GameObject>();
 
     /*
-        Dorm:
-	        Cafeteria:
-		        time: 5,
-		        energy: 1
-	        Library: 
-		        time: 10,
-		        energy: 2
-	        Classroom: 
-		        time: 15,
-		        energy: 3
-        Cafeteria:
-	        Dorm: 
-		        time: 5,
-		        energy: 1
-	        Library: 
-		        time: 15,
-		        energy: 3
-	        Classroom: 
-		        time: 10,
-		        energy: 2
-        Library:
-	        Dorm: 
-		        time: 10,
-		        energy: 2
-	        Cafeteria: 
-		        time: 15,
-		        energy: 3
-	        Classroom: 
-		        time: 5,
-		        energy: 1
-        Classroom:
-	        Dorm: 
-		        time: 15,
-		        energy: 3
-	        Cafeteria: 
-		        time: 10,
-		        energy: 2
-	        Library: 
-		        time: 5,
-		        energy: 1
-    */
+     *  From:
+     *      To:
+     *          time cost:
+     *          energy cost:
+     */
 
-    public static Dictionary<string, Dictionary<string, Dictionary<string, int>>> mapCosts = new()
+    public enum Location { Dorm, Cafeteria, Library, Classroom };
+    public static Location CurrLocation = Location.Dorm;
+
+    public static Dictionary<Location, Dictionary<Location, Dictionary<string, int>>> mapCosts = new()
     {
         {
-            "Dorm",
-            new Dictionary<string, Dictionary<string, int>>
+            Location.Dorm,
+            new Dictionary<Location, Dictionary<string, int>>
             {
                 {
-                    "Cafeteria",
+                    Location.Dorm,
+                    new Dictionary<string, int>
+                    {
+                        { "time", 0 },
+                        { "energy", 0 },
+                    }
+                },
+                {
+                    Location.Cafeteria,
                     new Dictionary<string, int>
                     {
                         { "time", 5 },
-                        { "energy", 1 },
+                        { "energy", -1 },
                     }
                 },
                 {
-                    "Library",
+                    Location.Library,
                     new Dictionary<string, int>
                     {
                         { "time", 10 },
-                        { "energy", 2 },
+                        { "energy", -2 },
                     }
                 },
                 {
-                    "Classroom",
+                    Location.Classroom,
                     new Dictionary<string, int>
                     {
                         { "time", 15 },
-                        { "energy", 3 },
+                        { "energy", -3 },
                     }
                 },
             }
         },
         {
-            "Cafeteria",
-            new Dictionary<string, Dictionary<string, int>>
+            Location.Cafeteria,
+            new Dictionary<Location, Dictionary<string, int>>
             {
                 {
-                    "Dorm",
+                    Location.Dorm,
                     new Dictionary<string, int>
                     {
                         { "time", 5 },
-                        { "energy", 1 },
+                        { "energy", -1 },
                     }
                 },
                 {
-                    "Library",
+                    Location.Cafeteria,
+                    new Dictionary<string, int>
+                    {
+                        { "time", 0 },
+                        { "energy", 0 },
+                    }
+                },
+                {
+                    Location.Library,
                     new Dictionary<string, int>
                     {
                         { "time", 15 },
-                        { "energy", 3 },
+                        { "energy", -3 },
                     }
                 },
                 {
-                    "Classroom",
+                    Location.Classroom,
                     new Dictionary<string, int>
                     {
                         { "time", 10 },
-                        { "energy", 2 },
+                        { "energy", -2 },
                     }
                 },
             }
         },
         {
-            "Library",
-            new Dictionary<string, Dictionary<string, int>>
+            Location.Library,
+            new Dictionary<Location, Dictionary<string, int>>
             {
                 {
-                    "Dorm",
+                    Location.Dorm,
                     new Dictionary<string, int>
                     {
                         { "time", 10 },
-                        { "energy", 2 },
+                        { "energy", -2 },
                     }
                 },
                 {
-                    "Cafeteria",
+                    Location.Cafeteria,
                     new Dictionary<string, int>
                     {
                         { "time", 15 },
-                        { "energy", 3 },
+                        { "energy", -3 },
                     }
                 },
                 {
-                    "Classroom",
+                    Location.Library,
+                    new Dictionary<string, int>
+                    {
+                        { "time", 0 },
+                        { "energy", 0 },
+                    }
+                },
+                {
+                    Location.Classroom,
                     new Dictionary<string, int>
                     {
                         { "time", 5 },
-                        { "energy", 1 },
+                        { "energy", -1 },
                     }
                 },
             }
         },
         {
-            "Classroom",
-            new Dictionary<string, Dictionary<string, int>>
+            Location.Classroom,
+            new Dictionary<Location, Dictionary<string, int>>
             {
                 {
-                    "Dorm",
+                    Location.Dorm,
                     new Dictionary<string, int>
                     {
                         { "time", 15 },
-                        { "energy", 3 },
+                        { "energy", -3 },
                     }
                 },
                 {
-                    "Cafeteria",
+                    Location.Cafeteria,
                     new Dictionary<string, int>
                     {
                         { "time", 10 },
-                        { "energy", 2 },
+                        { "energy", -2 },
                     }
                 },
                 {
-                    "Library",
+                    Location.Library,
                     new Dictionary<string, int>
                     {
                         { "time", 5 },
-                        { "energy", 1 },
+                        { "energy", -1 },
+                    }
+                },
+                {
+                    Location.Classroom,
+                    new Dictionary<string, int>
+                    {
+                        { "time", 0 },
+                        { "energy", 0 },
                     }
                 },
             }
