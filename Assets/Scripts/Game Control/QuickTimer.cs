@@ -18,7 +18,16 @@ public class QuickTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        defaultMusic = GameObject.FindGameObjectWithTag("DefaultMusic").GetComponent<AudioSource>();
+        try
+        {
+            defaultMusic = GameObject.FindGameObjectWithTag("DefaultMusic").GetComponent<AudioSource>();
+        }
+        catch(System.NullReferenceException e)
+        {
+            Debug.Log(e.Message);
+            defaultMusic = null;
+        }
+
         if (defaultMusic != null)
         {
             defaultMusic.Pause();
@@ -28,6 +37,7 @@ public class QuickTimer : MonoBehaviour
         result = GameObject.Find("QuickTimeResult");
         overlay = GameObject.Find("UIOverlay");
         r1 = result.GetComponent<QuicktimeResult>();
+        result.SetActive(false);
         stats = overlay.GetComponent<DefineStats>();
     }
 
@@ -51,6 +61,7 @@ public class QuickTimer : MonoBehaviour
             }
         }
         else{
+            Debug.Log("you didn't react fast enough");
             r1.SetActive();
             r1.setResult("You embarrass yourself in front of your peers. Your Stress increased and your happiness decreased!");
             stats.changeHappiness(-10);
