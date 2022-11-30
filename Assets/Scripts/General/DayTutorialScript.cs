@@ -13,6 +13,10 @@ public class DayTutorialScript : MonoBehaviour
     public void FinishTutorial()
     {
         Globals.tutorialDone = true;
+        GameObject MapButton = GameObject.Find("MapButton");
+        MapButton.GetComponent<Button>().onClick.RemoveAllListeners();
+        MapButton.GetComponent<Button>().onClick.AddListener(() => MapButton.GetComponent<ChangeScene>().SceneTransition(4));
+        Debug.Log("End the tutorial");
     }
 
     public void MoveToNextTutorialPhase(int phase)
@@ -29,10 +33,6 @@ public class DayTutorialScript : MonoBehaviour
     {
         NPCConversation next = GameObject.Find("TutorialConversation2").GetComponent<NPCConversation>();
         ConversationManager.Instance.StartConversation(next);
-        GameObject MapButton = GameObject.Find("MapButton");
-        MapButton.GetComponent<Button>().onClick.RemoveAllListeners();
-        MapButton.GetComponent<Button>().onClick.AddListener(() => MapButton.GetComponent<ChangeScene>().SceneTransition(4));
-        Debug.Log("End the tutorial");
     }
 
     // Start is called before the first frame update

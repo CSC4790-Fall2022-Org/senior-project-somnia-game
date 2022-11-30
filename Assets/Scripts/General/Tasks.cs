@@ -35,9 +35,6 @@ public class Tasks : MonoBehaviour
 
         RenderTask(newTask);
         tasks.Add(newTask);
-
-        Debug.Log("Task added with description " + description);
-        Debug.Log("Current tasks: " + tasks.ToString());
     }
 
     public void RenderTask(GameObject task)
@@ -105,16 +102,16 @@ public class Tasks : MonoBehaviour
 
     public void OnDisable()
     {
-        foreach (GameObject task in this.tasks)
+        if(this.tasks.Count > 0)
         {
-            task.transform.SetParent(null, false);
-            DontDestroyOnLoad(task);
+            foreach (GameObject task in this.tasks)
+            {
+                task.transform.SetParent(null, false);
+                DontDestroyOnLoad(task);
+            }
+            Globals.tasks = this.tasks;
+            Debug.Log("Updating global tasks");
         }
-        Globals.tasks = this.tasks;
-    }
-    public void UpdateExistingTasks(Scene current)
-    {
-        Globals.tasks = this.tasks;
     }
 
     public void GetExistingTasks()
@@ -143,8 +140,6 @@ public class Tasks : MonoBehaviour
             Debug.Log("there are existing tasks");
             GetExistingTasks();
         }
-        
-        //SceneManager.sceneUnloaded += UpdateExistingTasks;
     }
 
     // Update is called once per frame

@@ -79,6 +79,14 @@ public class Task : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //switch(CurrStatus)
+        //{
+        //    case Status.completed:
+        //        ShowCompletion();
+        //        break;
+        //    case Status.failed:
+        //        ShowFailure();
+        //        break;
+        //}
     }
 }
