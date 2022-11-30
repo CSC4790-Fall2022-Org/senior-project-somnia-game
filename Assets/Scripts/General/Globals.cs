@@ -35,6 +35,14 @@ public class Globals : MonoBehaviour
                 {"description", "Watch the sunset" },
                 {"time", "06:00 PM" }
             }
+        },
+        {
+            2,
+            new Dictionary<string, string>
+            {
+                {"description", "Go to class" },
+                {"time", "09:00 PM" }
+            }
         }
     };
 
