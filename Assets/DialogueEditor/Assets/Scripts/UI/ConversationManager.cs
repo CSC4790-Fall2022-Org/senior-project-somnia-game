@@ -272,6 +272,16 @@ namespace DialogueEditor
             return value;
         }
 
+        public void hide()
+        {
+            transform.localScale = new Vector3(0, 0, 0);
+        }
+
+        public void show()
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
 
         //--------------------------------------
         // Set state

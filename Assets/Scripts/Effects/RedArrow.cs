@@ -115,7 +115,7 @@ public class RedArrow : MonoBehaviour
         PointInDirection(DOWN);
     }
 
-    public void PointToDiningHallButton()
+    public void PointToCafeteriaButton()
     {
         PointTo(new Vector2(-1.35F, 0.45F));
         SetScale(LARGE_SCALE);
@@ -124,7 +124,7 @@ public class RedArrow : MonoBehaviour
 
     public void PointToLibraryButton()
     {
-        PointTo(new Vector2(6.0F, 1.5F));
+        PointTo(new Vector2(6.0F, 1.7F));
         SetScale(LARGE_SCALE);
         PointInDirection(LEFT);
     }

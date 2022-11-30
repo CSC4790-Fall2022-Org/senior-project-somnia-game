@@ -16,6 +16,7 @@ public class Globals : MonoBehaviour
     public static int minute = 0;
 
     public static bool tutorialDone = false;
+    public static int tutorialPhase = 1;
 
     public static Dictionary<int, Dictionary<string, string>> allTasks = new Dictionary<int, Dictionary<string, string>>
     {
@@ -38,6 +39,7 @@ public class Globals : MonoBehaviour
     };
 
     public static List<GameObject> tasks = new List<GameObject>();
+
 
     private void Awake()
     {
