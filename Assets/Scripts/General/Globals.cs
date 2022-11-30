@@ -40,6 +40,172 @@ public class Globals : MonoBehaviour
 
     public static List<GameObject> tasks = new List<GameObject>();
 
+    /*
+        Dorm:
+	        Cafeteria:
+		        time: 5,
+		        energy: 1
+	        Library: 
+		        time: 10,
+		        energy: 2
+	        Classroom: 
+		        time: 15,
+		        energy: 3
+        Cafeteria:
+	        Dorm: 
+		        time: 5,
+		        energy: 1
+	        Library: 
+		        time: 15,
+		        energy: 3
+	        Classroom: 
+		        time: 10,
+		        energy: 2
+        Library:
+	        Dorm: 
+		        time: 10,
+		        energy: 2
+	        Cafeteria: 
+		        time: 15,
+		        energy: 3
+	        Classroom: 
+		        time: 5,
+		        energy: 1
+        Classroom:
+	        Dorm: 
+		        time: 15,
+		        energy: 3
+	        Cafeteria: 
+		        time: 10,
+		        energy: 2
+	        Library: 
+		        time: 5,
+		        energy: 1
+    */
+
+    public static Dictionary<string, Dictionary<string, Dictionary<string, int>>> mapCosts = new()
+    {
+        {
+            "Dorm",
+            new Dictionary<string, Dictionary<string, int>>
+            {
+                {
+                    "Cafeteria",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 5 },
+                        { "energy", 1 },
+                    }
+                },
+                {
+                    "Library",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 10 },
+                        { "energy", 2 },
+                    }
+                },
+                {
+                    "Classroom",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 15 },
+                        { "energy", 3 },
+                    }
+                },
+            }
+        },
+        {
+            "Cafeteria",
+            new Dictionary<string, Dictionary<string, int>>
+            {
+                {
+                    "Dorm",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 5 },
+                        { "energy", 1 },
+                    }
+                },
+                {
+                    "Library",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 15 },
+                        { "energy", 3 },
+                    }
+                },
+                {
+                    "Classroom",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 10 },
+                        { "energy", 2 },
+                    }
+                },
+            }
+        },
+        {
+            "Library",
+            new Dictionary<string, Dictionary<string, int>>
+            {
+                {
+                    "Dorm",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 10 },
+                        { "energy", 2 },
+                    }
+                },
+                {
+                    "Cafeteria",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 15 },
+                        { "energy", 3 },
+                    }
+                },
+                {
+                    "Classroom",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 5 },
+                        { "energy", 1 },
+                    }
+                },
+            }
+        },
+        {
+            "Classroom",
+            new Dictionary<string, Dictionary<string, int>>
+            {
+                {
+                    "Dorm",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 15 },
+                        { "energy", 3 },
+                    }
+                },
+                {
+                    "Cafeteria",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 10 },
+                        { "energy", 2 },
+                    }
+                },
+                {
+                    "Library",
+                    new Dictionary<string, int>
+                    {
+                        { "time", 5 },
+                        { "energy", 1 },
+                    }
+                },
+            }
+        },
+    };
 
     private void Awake()
     {
