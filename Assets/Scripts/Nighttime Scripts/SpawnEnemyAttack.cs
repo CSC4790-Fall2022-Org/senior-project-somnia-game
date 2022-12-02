@@ -8,12 +8,12 @@ public class SpawnEnemyAttack : MonoBehaviour
     public static Transform pos1, pos2, pos3, pos4, pos5;
     public static Transform[] positions = new Transform[] {pos1, pos2, pos3, pos4, pos5};
     public GameObject fireball;
-    Vector3 fireballTargetPosition = transform.position;
+    Vector3 fireballTargetPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        fireballTargetPosition = transform.position;
     }
 
     // Update is called once per frame
