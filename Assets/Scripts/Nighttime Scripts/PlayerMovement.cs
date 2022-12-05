@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f;
     int lane = 3;
     Vector2 playerPosition = new Vector2(-2, -3);
-    bool movementBool = true;
+    bool movementBool = false;
     public AudioSource errorSound;
     public AudioSource moveSound;
     NightHealthManager HealthManager;
@@ -41,10 +41,17 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         checkInput();
+        setMovementBool();
         songPosition = (float)(AudioSettings.dspTime - dspSongTime);
         songPositionInBeats = songPosition / secPerBeat;
     }
-
+    void setMovementBool()
+    { 
+        if (songPosition == songPositionInBeats)
+        {
+            movementBool = true;
+        }
+    }
     void checkInput()
     {
         if(Input.GetKeyDown(shiftLeft) && movementBool){
@@ -75,8 +82,8 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if(lane > 1){
-            lane--;
-            moveSound.Play();
+                lane--;
+                moveSound.Play();
             } else{
                 errorSound.Play();
             }
@@ -110,17 +117,12 @@ public class PlayerMovement : MonoBehaviour
             }
             
             if(lane < 5){
-            lane++;
-            moveSound.Play();
+                lane++;
+                moveSound.Play();
             } else{
                 errorSound.Play();
             }
         }
-    }
-
-    void checkOnBeat()
-    {
-
     }
 
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
