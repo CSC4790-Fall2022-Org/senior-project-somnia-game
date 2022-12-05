@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -107,5 +108,20 @@ public class PlayerMovement : MonoBehaviour
     void checkOnBeat()
     {
 
+    }
+
+    void OnTriggerEnter2D(UnityEngine.Collider2D collision)
+    {
+        //Check for a match with the specified name on any GameObject that collides with your GameObject
+        if (collision.gameObject.tag == "Fireball")
+        {
+            //If the GameObject's name matches the one you suggest, output this message in the console
+            Log(collision);
+        }
+    }
+
+    void Log(Collider2D collision, [CallerMemberName] string message = null)
+    {
+        Debug.Log($"{message} called on {name} because a collision with {collision.gameObject.name}");
     }
 }

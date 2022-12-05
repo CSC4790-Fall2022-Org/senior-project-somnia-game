@@ -10,11 +10,11 @@ public class SpawnEnemyAttack : MonoBehaviour
     Vector3 fireballTargetPosition;
     int index;
 
-    Vector3 pos1 = new Vector3(-4.70f,0.0f,0.0f);
-    Vector3 pos2 = new Vector3(-2.25f,0.0f,0.0f);
-    Vector3 pos3 = new Vector3(0.28999996f,0.0f,0.0f);
-    Vector3 pos4 = new Vector3(2.80000019f,0.0f,0.0f);
-    Vector3 pos5 = new Vector3(5.19000006f,0.0f,0.0f);
+    Vector3 pos1 = new Vector3(-5.0f,6.0f,0.0f);
+    Vector3 pos2 = new Vector3(-2.5f,6.0f,0.0f);
+    Vector3 pos3 = new Vector3(0.0f,6.0f,0.0f);
+    Vector3 pos4 = new Vector3(2.5f,6.0f,0.0f);
+    Vector3 pos5 = new Vector3(5.0f,6.0f,0.0f);
     Vector3[] positions;
 
     // Start is called before the first frame update
