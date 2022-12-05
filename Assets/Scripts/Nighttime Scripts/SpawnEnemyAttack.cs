@@ -33,13 +33,14 @@ public class SpawnEnemyAttack : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         frames = frames + 1;
 
-        if(spawnTimer <= 0 && frames <= 17500){
+        if(spawnTimer <= 0 && frames <= 17700){
             index = Random.Range(0, positions.Length);
             fireballTargetPosition = positions[index];
             Instantiate(fireball, fireballTargetPosition, Quaternion.identity);
             spawnTimer = timeBetweenAttacks;
         }
     }
+
 
     // private void OnBecameInvisible() {
     //     Debug.Log("Destroyed");

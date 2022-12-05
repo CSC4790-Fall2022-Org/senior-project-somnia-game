@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DefaultMusic
   - Fireball
+  - continbutton
   layers:
   - Default
   - TransparentFX
