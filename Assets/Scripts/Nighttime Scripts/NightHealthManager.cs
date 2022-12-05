@@ -7,7 +7,7 @@ public class NightHealthManager : MonoBehaviour
 {
 
     public TextMeshProUGUI HealthText;
-    private int health;
+    private int health = 100;
 
     // Start is called before the first frame update
     void Start()

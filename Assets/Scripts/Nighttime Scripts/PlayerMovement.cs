@@ -18,12 +18,14 @@ public class PlayerMovement : MonoBehaviour
     bool movementBool = true;
     public AudioSource errorSound;
     public AudioSource moveSound;
+    NightHealthManager HealthManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
         controller = gameObject.GetComponent<CharacterController> ();
+        HealthManager = GameObject.Find("NightHealthManager").GetComponent<NightHealthManager>();
     }
 
     // Update is called once per frame
@@ -112,11 +114,11 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
-        //Check for a match with the specified name on any GameObject that collides with your GameObject
-        if (collision.gameObject.tag == "Fireball")
+        //Check for a match with the specified tag on any GameObject that collides with your GameObject
+        if (collision.gameObject.tag.CompareTo("Fireball") == 0)
         {
-            //If the GameObject's name matches the one you suggest, output this message in the console
-            Log(collision);
+            HealthManager.ChangeHealth(-5);
+            //Log(collision);
         }
     }
 
