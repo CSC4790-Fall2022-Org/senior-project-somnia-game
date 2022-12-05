@@ -19,19 +19,30 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource errorSound;
     public AudioSource moveSound;
     NightHealthManager HealthManager;
-
+    public float songBpm;
+    public float secPerBeat;
+    public float songPosition;
+    public float songPositionInBeats;
+    public float dspSongTime;
+    public AudioSource musicSource;
 
     // Start is called before the first frame update
     void Start()
     {
         controller = gameObject.GetComponent<CharacterController> ();
         HealthManager = GameObject.Find("NightHealthManager").GetComponent<NightHealthManager>();
+        musicSource = GetComponent<AudioSource>();
+        secPerBeat = 60f / songBpm;
+        dspSongTime = (float)AudioSettings.dspTime;
+        musicSource.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
         checkInput();
+        songPosition = (float)(AudioSettings.dspTime - dspSongTime);
+        songPositionInBeats = songPosition / secPerBeat;
     }
 
     void checkInput()
