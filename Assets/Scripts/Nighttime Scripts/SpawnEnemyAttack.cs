@@ -9,6 +9,7 @@ public class SpawnEnemyAttack : MonoBehaviour
     public GameObject fireball;
     Vector3 fireballTargetPosition;
     int index;
+    int frames = 0;
 
     Vector3 pos1 = new Vector3(-5.0f,6.0f,0.0f);
     Vector3 pos2 = new Vector3(-2.5f,6.0f,0.0f);
@@ -30,8 +31,9 @@ public class SpawnEnemyAttack : MonoBehaviour
         //This method of spawning prefabs was found in the following unity forum
         //https://answers.unity.com/questions/637597/instantiate-at-intervals.html
         spawnTimer -= Time.deltaTime;
+        frames = frames + 1;
 
-        if(spawnTimer <= 0){
+        if(spawnTimer <= 0 && frames <= 17500){
             index = Random.Range(0, positions.Length);
             fireballTargetPosition = positions[index];
             Instantiate(fireball, fireballTargetPosition, Quaternion.identity);
