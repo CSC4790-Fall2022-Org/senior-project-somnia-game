@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   butcanvas: {fileID: 1932869132}
-  song: {fileID: 0}
+  song: {fileID: 8300000, guid: 9308c3c5e593d0740aaff81c8067fa13, type: 3}
 --- !u!4 &555893075
 Transform:
   m_ObjectHideFlags: 0
