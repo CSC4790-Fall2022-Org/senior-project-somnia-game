@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class SpawnEnemyAttack : MonoBehaviour
 {
-    public float spawnTimer = 0.75f;
-    public static Transform pos1, pos2, pos3, pos4, pos5;
-    public static Transform[] positions = new Transform[] {pos1, pos2, pos3, pos4, pos5};
+    private const float timeBetweenAttacks = 1.2f;
+    public float spawnTimer = timeBetweenAttacks;
     public GameObject fireball;
     Vector3 fireballTargetPosition;
+    int index;
+
+    Vector3 pos1 = new Vector3(-4.70f,6.0f,0.0f);
+    Vector3 pos2 = new Vector3(-2.25f,6.0f,0.0f);
+    Vector3 pos3 = new Vector3(0.28999996f,6.0f,0.0f);
+    Vector3 pos4 = new Vector3(2.80000019f,6.0f,0.0f);
+    Vector3 pos5 = new Vector3(5.19000006f,6.0f,0.0f);
+    Vector3[] positions;
 
     // Start is called before the first frame update
     void Start()
     {
+        positions = new [] {pos1, pos2, pos3, pos4, pos5};
         fireballTargetPosition = transform.position;
     }
 
@@ -24,9 +32,10 @@ public class SpawnEnemyAttack : MonoBehaviour
         spawnTimer -= Time.deltaTime;
 
         if(spawnTimer <= 0){
-            // fireballTargetPosition.x = pos1.transform.position.x;
-            // Instantiate(fireball, fireballTargetPosition, Quaternion.identity);
-            // spawnTimer = 0.75f;
+            index = Random.Range(0, positions.Length);
+            fireballTargetPosition = positions[index];
+            Instantiate(fireball, fireballTargetPosition, Quaternion.identity);
+            spawnTimer = timeBetweenAttacks;
         }
     }
 }
