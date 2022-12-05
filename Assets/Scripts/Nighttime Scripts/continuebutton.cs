@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class continuebutton : MonoBehaviour
 {
     public GameObject butcanvas;
-    int frames = 0;
+    public AudioClip song;
+    float timer = 0f;
  
     // Update is called once per frame
     void Update()
     {
-        frames = frames+1;
+        timer += Time.deltaTime;
 
-        if(frames >= 19000) {
+        if(timer > (song.length)) {
             butcanvas.SetActive(true);
         }
     }

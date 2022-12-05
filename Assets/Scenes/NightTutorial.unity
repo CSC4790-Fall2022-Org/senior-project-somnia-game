@@ -370,6 +370,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 517635732034397060, guid: 0751175e5a709ca4ea973ea112b9d397, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1963217703895793610, guid: 0751175e5a709ca4ea973ea112b9d397, type: 3}
       propertyPath: m_Name
       value: Fireball
@@ -1103,6 +1107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   butcanvas: {fileID: 1932869132}
+  song: {fileID: 0}
 --- !u!4 &555893075
 Transform:
   m_ObjectHideFlags: 0
@@ -1880,7 +1885,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d57b6adceca1d4b46bec56d1a61d5f36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2197,7 +2202,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3272,6 +3277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 1.2
   fireball: {fileID: 1963217703895793610, guid: 0751175e5a709ca4ea973ea112b9d397, type: 3}
+  song: {fileID: 8300000, guid: 9308c3c5e593d0740aaff81c8067fa13, type: 3}
 --- !u!4 &2107507082
 Transform:
   m_ObjectHideFlags: 0
