@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     bool movementBool = true;
     public AudioSource errorSound;
     public AudioSource moveSound;
+    public AudioSource hurtSound;
     NightHealthManager HealthManager;
 
 
@@ -118,6 +119,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag.CompareTo("Fireball") == 0)
         {
             HealthManager.ChangeHealth(-5);
+            hurtSound.Play();
             //Log(collision);
         }
     }

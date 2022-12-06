@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/thank you.unity
     guid: 19218147c1de3d04b909d309e7a79c5f
+  - enabled: 1
+    path: Assets/Scenes/Night Loss.unity
+    guid: ce134e5a9b109d348b736695d325e329
   m_configObjects: {}
