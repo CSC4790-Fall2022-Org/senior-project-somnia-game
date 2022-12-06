@@ -31,10 +31,8 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController> ();
         HealthManager = GameObject.Find("NightHealthManager").GetComponent<NightHealthManager>();
-        musicSource = GetComponent<AudioSource>();
         secPerBeat = 60f / songBpm;
         dspSongTime = (float)AudioSettings.dspTime;
-        musicSource.Play();
     }
 
     // Update is called once per frame
