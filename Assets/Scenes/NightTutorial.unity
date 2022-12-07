@@ -1741,7 +1741,7 @@ GameObject:
   - component: {fileID: 997403176}
   - component: {fileID: 997403175}
   m_Layer: 0
-  m_Name: DM-CGS-17
+  m_Name: hurt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2276,7 +2276,7 @@ MonoBehaviour:
   speed: 10
   errorSound: {fileID: 773627997}
   moveSound: {fileID: 1762210780}
-  hurtSound: {fileID: 0}
+  hurtSound: {fileID: 997403175}
   songBpm: 135
   secPerBeat: 0
   songPosition: 0
