@@ -2141,7 +2141,7 @@ MonoBehaviour:
   speed: 10
   errorSound: {fileID: 773627997}
   moveSound: {fileID: 1762210780}
-  songBpm: 90
+  songBpm: 60
   secPerBeat: 0
   songPosition: 0
   songPositionInBeats: 0

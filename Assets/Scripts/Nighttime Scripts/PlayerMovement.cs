@@ -46,9 +46,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void setMovementBool()
     {
-        if ((int)songPositionInBeats - songPosition <= secPerBeat)
+        if (Math.Abs(songPositionInBeats * secPerBeat - songPosition) <= 0.1)
         {
-            Math.Abs(-4.7);
             movementBool = true;
         }
         else
@@ -91,14 +90,7 @@ public class PlayerMovement : MonoBehaviour
                 lane--;
                 moveSound.Play();
             }
-            else
-            {
-                errorSound.Play();
-            }
-        }
-        else
-        {
-            errorSound.Play();
+            
         }
 
         if (Input.GetKeyDown(shiftRight) && movementBool)
@@ -133,15 +125,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 lane++;
                 moveSound.Play();
-            }
-            else
-            {
-                errorSound.Play();
-            }
-        }
-        else
-        {
-            errorSound.Play();
+            }           
         }
     }
 
