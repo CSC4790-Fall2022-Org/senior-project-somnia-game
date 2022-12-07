@@ -58,25 +58,21 @@ public class PlayerMovement : MonoBehaviour
             if(lane == 2){
                 targetPosition.x = pos1.transform.position.x;
                 transform.position = targetPosition;
-                Debug.Log("Lane 1");
             }
 
             if(lane == 3){
                 targetPosition.x = pos2.transform.position.x;
                 transform.position = targetPosition;
-                Debug.Log("Lane 2");
             }
 
             if(lane == 4){
                 targetPosition.x = pos3.transform.position.x;
                 transform.position = targetPosition;
-                Debug.Log("Lane 3");
             }
 
             if(lane == 5){
                 targetPosition.x = pos4.transform.position.x;
                 transform.position = targetPosition;
-                Debug.Log("Lane 4");
             }
 
             if(lane > 1){
@@ -93,25 +89,21 @@ public class PlayerMovement : MonoBehaviour
             if(lane == 1){
                 targetPosition.x = pos2.transform.position.x;
                 transform.position = targetPosition;
-                Debug.Log("Lane 2");
             }
 
             if(lane == 2){
                 targetPosition.x = pos3.transform.position.x;
                 transform.position = targetPosition;
-                Debug.Log("Lane 3");
             }
 
             if(lane == 3){
                 targetPosition.x = pos4.transform.position.x;
                 transform.position = targetPosition;
-                Debug.Log("Lane 4");
             }
 
             if(lane == 4){
                 targetPosition.x = pos5.transform.position.x;
                 transform.position = targetPosition;
-                Debug.Log("Lane 5");
             }
             
             if(lane < 5){
