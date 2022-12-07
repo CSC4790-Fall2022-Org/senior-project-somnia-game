@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void setMovementBool()
     {
-        if (Math.Abs(songPositionInBeats * secPerBeat - songPosition) <= 0.5)
+        if (Math.Abs(songPositionInBeats * secPerBeat - songPosition) <= 0.4)
         {
             movementBool = true;
         }
