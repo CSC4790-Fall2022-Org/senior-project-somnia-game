@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
-
+public class PlayerMovement : MonoBehaviour{
     CharacterController controller;
     Vector2 movement = Vector2.zero;
     public KeyCode shiftLeft;
@@ -27,8 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource musicSource;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         controller = gameObject.GetComponent<CharacterController> ();
         HealthManager = GameObject.Find("NightHealthManager").GetComponent<NightHealthManager>();
         secPerBeat = 60f / songBpm;
@@ -36,22 +33,18 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         checkInput();
         setMovementBool();
         songPosition = (float)(AudioSettings.dspTime - dspSongTime);
-        songPositionInBeats = songPosition / secPerBeat;
+        songPositionInBeats = (int) (songPosition / secPerBeat);
     }
-    void setMovementBool()
-    { 
-        if (songPosition - songPositionInBeats == 0)
-        {
+    void setMovementBool(){ 
+        if (songPositionInBeats - (int)songPositionInBeats <= 0.0001){
             movementBool = true;
         }
     }
-    void checkInput()
-    {
+    void checkInput(){
         if(Input.GetKeyDown(shiftLeft) && movementBool){
             Vector3 targetPosition = transform.position;
 
@@ -82,6 +75,9 @@ public class PlayerMovement : MonoBehaviour
                 errorSound.Play();
             }
         }
+        else{
+            errorSound.Play();
+        }
 
         if(Input.GetKeyDown(shiftRight) && movementBool){
             Vector3 targetPosition = transform.position;
@@ -109,24 +105,25 @@ public class PlayerMovement : MonoBehaviour
             if(lane < 5){
                 lane++;
                 moveSound.Play();
-            } else{
+            } 
+            else{
                 errorSound.Play();
             }
         }
+        else{
+            errorSound.Play();
+        }
     }
 
-    void OnTriggerEnter2D(UnityEngine.Collider2D collision)
-    {
+    void OnTriggerEnter2D(UnityEngine.Collider2D collision){
         //Check for a match with the specified tag on any GameObject that collides with your GameObject
-        if (collision.gameObject.tag.CompareTo("Fireball") == 0)
-        {
+        if (collision.gameObject.tag.CompareTo("Fireball") == 0){
             HealthManager.ChangeHealth(-5);
             //Log(collision);
         }
     }
 
-    void Log(Collider2D collision, [CallerMemberName] string message = null)
-    {
+    void Log(Collider2D collision, [CallerMemberName] string message = null){
         Debug.Log($"{message} called on {name} because a collision with {collision.gameObject.name}");
     }
 }
