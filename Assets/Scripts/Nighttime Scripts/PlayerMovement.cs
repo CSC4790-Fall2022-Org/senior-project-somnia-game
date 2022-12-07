@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     bool movementBool = false;
     public AudioSource errorSound;
     public AudioSource moveSound;
+    public AudioSource hurtSound;
     NightHealthManager HealthManager;
     public float songBpm;
     public float secPerBeat;
@@ -135,6 +136,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag.CompareTo("Fireball") == 0)
         {
             HealthManager.ChangeHealth(-5);
+            hurtSound.Play();
             //Log(collision);
         }
     }

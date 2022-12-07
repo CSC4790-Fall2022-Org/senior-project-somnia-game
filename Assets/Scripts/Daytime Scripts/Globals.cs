@@ -14,6 +14,7 @@ public class Globals : MonoBehaviour
     // time
     public static int hour = 17;
     public static int minute = 0;
+    public static bool dayOver = false;
 
     public static bool tutorialDone = false;
     public static int tutorialPhase = 1;
@@ -25,7 +26,9 @@ public class Globals : MonoBehaviour
             new Dictionary<string,string>
             {
                 {"description", "Check emails" },
-                {"time", "08:00 PM" }
+                {"time", "08:00 PM" },
+                {"decrease_stress", "5" },
+                {"increase_stress", "5" }
             }
         },
         {
@@ -33,7 +36,9 @@ public class Globals : MonoBehaviour
             new Dictionary<string, string>
             {
                 {"description", "Watch the sunset" },
-                {"time", "06:00 PM" }
+                {"time", "06:00 PM" },
+                {"decrease_stress", "0" },
+                {"increase_stress", "0" }
             }
         },
         {
@@ -41,7 +46,9 @@ public class Globals : MonoBehaviour
             new Dictionary<string, string>
             {
                 {"description", "Go to class" },
-                {"time", "09:00 PM" }
+                {"time", "09:15 PM" },
+                {"decrease_stress", "10" },
+                {"increase_stress", "20" }
             }
         }
     };
