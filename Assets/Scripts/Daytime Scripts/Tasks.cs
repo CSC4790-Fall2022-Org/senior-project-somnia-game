@@ -31,7 +31,9 @@ public class Tasks : MonoBehaviour
 
         string description = Globals.allTasks[id]["description"];
         string time = Globals.allTasks[id]["time"];
-        newTask.GetComponent<Task>().SetUp(id, description, time);
+        int decrease_stress = int.Parse(Globals.allTasks[id]["decrease_stress"]);
+        int increase_stress = int.Parse(Globals.allTasks[id]["increase_stress"]);
+        newTask.GetComponent<Task>().SetUp(id, description, time, decrease_stress, increase_stress);
 
         RenderTask(newTask);
         tasks.Add(newTask);

@@ -12,13 +12,19 @@ public class Task : MonoBehaviour
     Status CurrStatus = Status.pending;
     public int id;
     public string description;
+    public int decrease_stress;
+    public int increase_stress;
     public System.DateTime deadline;
 
-    public void SetUp(int id, string description, string time)
+    DefineStats stats;
+
+    public void SetUp(int id, string description, string time, int decrease_stress, int increase_stress)
     {
         this.id = id;
         this.description = description;
         this.deadline = System.DateTime.ParseExact(time, "hh:mm tt", CultureInfo.CurrentCulture);
+        this.decrease_stress = decrease_stress;
+        this.increase_stress = increase_stress;
         taskDescriptionAndTime.text = description + "\n" + time;
     }
 
@@ -39,12 +45,15 @@ public class Task : MonoBehaviour
 
     public void ShowFailure()
     {
-        if(CurrStatus != Status.completed)
+        if(CurrStatus == Status.pending)
         {
             Strikethrough();
             Color slightlyFadedRed = new(182f/255f, 77f/255f, 77f/255f);
             SetColor(slightlyFadedRed);
             CurrStatus = Status.failed;
+            stats = GameObject.Find("UIOverlay").GetComponent<DefineStats>();
+            stats.changeStress(increase_stress);
+            Debug.Log("You failed to complete a task on time");
         }
     }
 
@@ -59,6 +68,8 @@ public class Task : MonoBehaviour
             checkmark.SetActive(true);
 
             CurrStatus = Status.completed;
+            stats = GameObject.Find("UIOverlay").GetComponent<DefineStats>();
+            stats.changeStress(-decrease_stress);
         }
     }
 
@@ -73,7 +84,6 @@ public class Task : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame

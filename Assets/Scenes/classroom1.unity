@@ -758,18 +758,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 506297470384501086}
         m_TargetAssemblyTypeName: DefineStats, Assembly-CSharp
-        m_MethodName: changeStress
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -10
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 506297470384501086}
-        m_TargetAssemblyTypeName: DefineStats, Assembly-CSharp
         m_MethodName: changeEnergy
         m_Mode: 3
         m_Arguments:
