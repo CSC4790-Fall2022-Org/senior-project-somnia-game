@@ -6,29 +6,30 @@ using TMPro;
 
 public class ClassTime : MonoBehaviour
 {
-    Button b1;
+    GameObject bt;
     GameObject b;
-    TextMeshProUGUI b2;
     void Start()
     {
         
         b = GameObject.Find("LearnButton");
-        b1 = b.GetComponent<Button>();
-        b2 = b.GetComponent<TextMeshProUGUI>();
-
+        bt = GameObject.Find("LearnButtonTrue");
+        bt.SetActive(false);
         //Debug.Log(Globals.hour);
         if(Globals.hour == 21){
             if(Globals.minute <=1){
-               b1.interactable = true;
-               b2.SetText(" ");
+               b.SetActive(false);
+               bt.SetActive(true);
             }
         }
         else if(Globals.hour == 20){
             if(Globals.minute >=30){
-                b1.interactable = true;
-                b2.SetText(" ");
+                b.SetActive(false);
+                bt.SetActive(true);
+
             }
+
         }
+
     }
 
     // Update is called once per frame
