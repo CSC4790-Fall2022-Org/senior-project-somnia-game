@@ -2276,16 +2276,13 @@ MonoBehaviour:
   speed: 10
   errorSound: {fileID: 773627997}
   moveSound: {fileID: 1762210780}
-
-  songBpm: 60
+  hurtSound: {fileID: 0}
+  songBpm: 135
   secPerBeat: 0
   songPosition: 0
   songPositionInBeats: 0
   dspSongTime: 0
-  musicSource: {fileID: 432402617}
-
-  hurtSound: {fileID: 997403175}
-
+  musicSource: {fileID: 0}
 --- !u!4 &1374272591
 Transform:
   m_ObjectHideFlags: 0
