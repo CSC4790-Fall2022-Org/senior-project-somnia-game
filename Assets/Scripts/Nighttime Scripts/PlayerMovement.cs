@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void setMovementBool()
     { 
-        if (songPosition == songPositionInBeats)
+        if (songPosition - songPositionInBeats == 0)
         {
             movementBool = true;
         }
