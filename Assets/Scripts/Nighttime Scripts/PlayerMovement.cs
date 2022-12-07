@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour{
         songPositionInBeats = (int) (songPosition / secPerBeat);
     }
     void setMovementBool(){ 
-        if (songPositionInBeats - (int)songPositionInBeats <= 0.0001){
+        if (songPosition - (int)songPositionInBeats <= 0.1){
             movementBool = true;
         }
     }
