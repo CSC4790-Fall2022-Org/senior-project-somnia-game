@@ -11,6 +11,7 @@ public class NightTutorialScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Energy " + Globals.energy + " Happiness " + Globals.happiness + " Stress " + Globals.stress);
         defaultMusic = GameObject.FindGameObjectWithTag("DefaultMusic");
         if (defaultMusic != null)
         {

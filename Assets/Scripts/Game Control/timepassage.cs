@@ -15,13 +15,18 @@ public class timepassage : MonoBehaviour
     //void Awake(){
     //    DontDestroyOnLoad(transform.gameObject);
     //}
+
+    ChangeScene SceneChanger;
     void Start()
     {
         this.hour = Globals.hour;
         this.minute = Globals.minute;
 
         SceneManager.sceneUnloaded += UpdateGlobalTime;
+
+        SceneChanger = transform.gameObject.GetComponent<ChangeScene>();
     }
+
 
     void UpdateGlobalTime(Scene current)
     {
@@ -38,7 +43,12 @@ public class timepassage : MonoBehaviour
         string minuteText;
         string AMPMText;
 
-        if(hour <= 12)
+        if(hour == 0)
+        {
+            hourInTwelveHrTime = 12;
+            AMPMText = "AM";
+        }
+        else if(hour <= 11)
         {
             hourInTwelveHrTime = hour;
             AMPMText = "AM";
@@ -73,8 +83,11 @@ public class timepassage : MonoBehaviour
 
     public void addTime(){
         hour+=1;
-        if(hour == 25){
+        if(hour == 24)
+        {
+            Debug.Log("it is midnight!");
             hour = 0;
+            EndDay();
         }
     }
     public void addMins(int mins){
@@ -82,14 +95,27 @@ public class timepassage : MonoBehaviour
         if(minute >= 60){
             minute -= 60;
             hour+=1;
-            if(hour == 25){
-            hour = 0;
-        }
+            if(hour == 24)
+            {
+                Debug.Log("it is midnight!");
+                hour = 0;
+                EndDay();
+            }
         }
     }
 
     public string GetCurrentTime()
     {
         return leText.text.ToString();
+    }
+
+    public void EndDay()
+    {
+        List<GameObject> tasks = GameObject.Find("Tasks").GetComponent<Tasks>().tasks;
+        foreach (GameObject task in tasks)
+        {
+            task.GetComponent<Task>().ShowFailure();
+        }
+        SceneChanger.SceneTransition(8);
     }
 }

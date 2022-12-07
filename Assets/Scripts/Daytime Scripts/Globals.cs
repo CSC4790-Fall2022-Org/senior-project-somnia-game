@@ -14,6 +14,7 @@ public class Globals : MonoBehaviour
     // time
     public static int hour = 17;
     public static int minute = 0;
+    public static bool dayOver = false;
 
     public static bool tutorialDone = false;
     public static int tutorialPhase = 1;
