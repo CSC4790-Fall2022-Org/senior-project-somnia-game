@@ -9,14 +9,26 @@ public class PlayerMovement : MonoBehaviour
 {
     CharacterController controller;
     Vector2 movement = Vector2.zero;
+
+    public Transform player;
     public KeyCode shiftLeft;
     public KeyCode shiftRight;
-    public Transform player;
     public Transform pos1, pos2, pos3, pos4, pos5;
+
+    public Transform indicator;
+    public KeyCode indicator_left;
+    public KeyCode indicator_right;
+    public KeyCode useZip;
+    public Transform in_pos1, in_pos2, in_pos3, in_pos4, in_pos5;
+    
     public float speed = 10f;
+    private const float zipCooldown = 5.0f;
+    public float zipTimer = zipCooldown;
     int lane = 3;
+    int indicator_lane = 3;
     Vector2 playerPosition = new Vector2(-2, -3);
     bool movementBool = false;
+
     public AudioSource errorSound;
     public AudioSource moveSound;
     public AudioSource hurtSound;
@@ -41,10 +53,15 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         checkInput();
+        zipControl();
         setMovementBool();
+
         songPosition = (float)(AudioSettings.dspTime - dspSongTime);
         songPositionInBeats = (int)(songPosition / secPerBeat);
+
+        zipTimer -= Time.deltaTime;
     }
+
     void setMovementBool()
     {
         if (Math.Abs(songPositionInBeats * secPerBeat - songPosition) <= 0.4)
@@ -56,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
             movementBool = false;
         }
     }
+
     void checkInput()
     {
         if (Input.GetKeyDown(shiftLeft) && movementBool)
@@ -91,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
                 lane--;
                 moveSound.Play();
             }
-            
+        
         }
 
         if (Input.GetKeyDown(shiftRight) && movementBool)
@@ -128,6 +146,112 @@ public class PlayerMovement : MonoBehaviour
                 moveSound.Play();
             }           
         }
+    }
+
+    void zipControl() {
+
+            if (Input.GetKeyDown(indicator_left)){
+                Vector3 indicatorTarget = transform.position;
+
+                if (indicator_lane == 2)
+                {
+                    indicatorTarget = in_pos1.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 3)
+                {
+                    indicatorTarget = in_pos2.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 4)
+                {
+                    indicatorTarget = in_pos3.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 5)
+                {
+                    indicatorTarget = in_pos4.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if(indicator_lane > 1)
+                {
+                    indicator_lane--;
+                }
+            }
+
+            if (Input.GetKeyDown(indicator_right)) {
+                Vector3 indicatorTarget = transform.position;
+
+                if (indicator_lane == 1)
+                {
+                    indicatorTarget = in_pos2.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 2)
+                {
+                    indicatorTarget = in_pos3.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 3)
+                {
+                    indicatorTarget = in_pos4.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 4)
+                {
+                    indicatorTarget = in_pos5.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if(indicator_lane < 5)
+                {
+                    indicator_lane++;
+                }
+            }
+
+            if (Input.GetKeyDown(useZip) && zipTimer <= 0){
+                Vector3 targetPosition = transform.position;
+
+                if (indicator_lane == 1)
+                {
+                    targetPosition.x = pos1.transform.position.x;
+                    transform.position = targetPosition;
+                }
+
+                if (indicator_lane == 2)
+                {
+                    targetPosition.x = pos2.transform.position.x;
+                    transform.position = targetPosition;
+                }
+
+                if (indicator_lane == 3)
+                {
+                    targetPosition.x = pos3.transform.position.x;
+                    transform.position = targetPosition;
+                }
+
+                if (indicator_lane == 4)
+                {
+                    targetPosition.x = pos4.transform.position.x;
+                    transform.position = targetPosition;
+                }
+
+                if(indicator_lane == 5)
+                {
+                    targetPosition.x = pos5.transform.position.x;
+                    transform.position = targetPosition;
+                }
+
+                lane = indicator_lane;
+                zipTimer = zipCooldown;
+            }
     }
 
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
