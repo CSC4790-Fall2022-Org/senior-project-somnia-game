@@ -14,14 +14,19 @@ public class EffectsManager : MonoBehaviour
         EnemyAttackSpawner = GameObject.Find("EnemyAttackSpawner").GetComponent<SpawnEnemyAttack>();
         HealthManager = GameObject.Find("NightHealthManager").GetComponent<NightHealthManager>();
 
-        if (HealthManager.GetHealth() < 90)
+        if (HealthManager.GetHealth() < 80)
         {
             SetVeinsVisible(true);
         }
         if (Globals.happiness < 50)
         {
-            SetFireballGravity(2);
+            SetFireballGravity(2f);
             SetFireballInterval(0.6f);
+        }
+        else
+        {
+            SetFireballGravity(0.25f);
+            SetFireballInterval(1.2f);
         }
         if (Globals.stress > 50)
         {
@@ -41,7 +46,7 @@ public class EffectsManager : MonoBehaviour
         veins.SetActive(true);
     }
 
-    public void SetFireballGravity(int gravity)
+    public void SetFireballGravity(float gravity)
     {
         GameObject fireball = EnemyAttackSpawner.fireball;
         Rigidbody2D fireballRigidBody = fireball.transform.GetChild(0).GetComponent<Rigidbody2D>();
