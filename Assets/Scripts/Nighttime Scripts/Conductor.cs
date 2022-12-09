@@ -149,7 +149,7 @@ public class Conductor : MonoBehaviour
 #endif
 
         //display countdown canvas
-        countDownCanvas.SetActive(true);
+        //countDownCanvas.SetActive(true);
 
         //get the song info from messenger
         songInfo = SongInfoMessenger.Instance.currentSong;
