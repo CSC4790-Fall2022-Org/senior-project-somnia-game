@@ -12,9 +12,14 @@ public class NightHealthManager : MonoBehaviour
     public AudioSource endSound;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        SetHealth(Globals.energy);
+        SetHealthText();
+    }
     void Start()
     {
-        SetHealthText();
+
     }
 
     // Update is called once per frame
