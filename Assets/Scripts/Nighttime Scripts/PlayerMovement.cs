@@ -9,14 +9,22 @@ public class PlayerMovement : MonoBehaviour
 {
     CharacterController controller;
     Vector2 movement = Vector2.zero;
+
+    public Transform player;
     public KeyCode shiftLeft;
     public KeyCode shiftRight;
-    public Transform player;
     public Transform pos1, pos2, pos3, pos4, pos5;
+
+    public Transform indicator;
+    public KeyCode indicator_left;
+    public KeyCode indicator_right;
+    public Transform in_pos1, in_pos2, in_pos3, in_pos4, in_pos5;
+    
     public float speed = 10f;
     int lane = 3;
     Vector2 playerPosition = new Vector2(-2, -3);
     bool movementBool = false;
+
     public AudioSource errorSound;
     public AudioSource moveSound;
     public AudioSource hurtSound;
@@ -45,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         songPosition = (float)(AudioSettings.dspTime - dspSongTime);
         songPositionInBeats = (int)(songPosition / secPerBeat);
     }
+
     void setMovementBool()
     {
         if (Math.Abs(songPositionInBeats * secPerBeat - songPosition) <= 0.4)
@@ -56,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
             movementBool = false;
         }
     }
+
     void checkInput()
     {
         if (Input.GetKeyDown(shiftLeft) && movementBool)
@@ -91,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
                 lane--;
                 moveSound.Play();
             }
-            
+        
         }
 
         if (Input.GetKeyDown(shiftRight) && movementBool)
@@ -128,6 +138,10 @@ public class PlayerMovement : MonoBehaviour
                 moveSound.Play();
             }           
         }
+    }
+
+    void zipControl() {
+            
     }
 
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
