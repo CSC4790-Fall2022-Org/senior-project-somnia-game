@@ -34,4 +34,3 @@ Download [Unity Hub](https://unity3d.com/get-unity/download), and on the left, g
 
 ### Execution
 Ensure that you are on the `Menu.unity` scene before pressing play. If you are not on this scene, change to it by pressing `File -> Open Scene`, and navigate to `Assets/Scenes`. Click on `Menu.unity`, then just press the play button at the top!
-
