@@ -1,8 +1,10 @@
 # Somnia: A College Life Simulator
 Repo for CSC 4790 Senior Project Somnia. Experience the wonders of time, energy, and sleep management during college life.
 
-Full Abstract:
-Somnia will be a continuation of our project from CSC4700 Software Engineering, and will function relatively the same way, alongside new additions such as minigames and a revamped night section. To reiterate, this game will emphasize the importance of sleep and time management in a college setting by putting the player in the shoes of a new college student trying to make their way in the world of education. Players will be challenged to manage their stats in order to make sure their college experience goes as smoothly as possible. Stats can be changed either by interactions during their time at school, or by making it through the night section (preferably with a good night’s rest). Stats in this game will play a major role; they will determine whether or not the player can succeed in certain actions during the day, and they will also determine the difficulty of the night section, which will simulate how well they sleep, and what their stats will be when they wake up and start a new day. 
+**[CSC 4790 Final Release]**
+
+## Abstract
+Somnia shows the importance of sleep and time management by putting the player in the shoes of a new college student. Players are free to choose what they do, but must manage their stats and time, mirroring real life responsibility. Stats show how certain actions affect the players and affect the difficulty of the night section, which simulates sleep and will affect the next day. This illustrates how sleep affects a student's daily life. 
 
 ## Acknowledgements
 Huge thanks to Runia Dev for their Dialogue Editor.
@@ -13,7 +15,7 @@ Unity Engine and C#
 
 ## Getting Started
 ### Prerequisites
-Download [Unity Hub](https://unity3d.com/get-unity/download), and go to Installs on the left > Install Editor in the top-right. The recommended LTS version should work, but if you would like to use the editor version we used, go [here](https://unity3d.com/get-unity/download/archive), scroll down, and install version 2021.3.9f1.
+Download [Unity Hub](https://unity3d.com/get-unity/download), and on the left, go to `Installs > Install Editor` in the top-right. The recommended LTS version should work, but if you would like to use the editor version we used, go [here](https://unity3d.com/get-unity/download/archive), scroll down, and install version **2021.3.9f1**.
 
 ### Installation
 1. Clone the repo.
@@ -23,11 +25,12 @@ Download [Unity Hub](https://unity3d.com/get-unity/download), and go to Installs
 5. Open the project and you're set!
 
 ### Contributing
-1. Scripts (code) are in `Assets/Scripts`. You can edit them in your preferred editor, however Visual Studio is the most compatible with Unity and allows autocomplete.
-2. Scenes (graphically editable in Scene view) are in `Assets/Scenes`. 
-3. To edit dialogue, you have to have the DialogueEditor view open. Go to Window > DialogueEditor and place it where you like. Then make sure you have a NPCConversation object (i.e., an object with the NPC Conversation script attached to it) selected. For more details, check the DialogueEditor documentation in `Assets/DialogueEditor/DialogueEditorDocumentation.pdf` or [here](https://github.com/CSC4790-Fall2022-Org/senior-project-somnia-game/blob/dev/Assets/DialogueEditor/DialogueEditorDocumentation.pdf).
-4. You can preview how the game looks with the Game view.
+1. Everything is mostly organized between Daytime and Nighttime.
+2. Scripts (code) are in `Assets/Scripts`. You can edit them in your preferred editor, however Visual Studio is the most compatible with Unity.
+3. Scenes (graphically editable in Scene view) are in `Assets/Scenes`. 
+4. To edit dialogue, you have to have the DialogueEditor view open. Go to Window > DialogueEditor and place it where you like. Then make sure you have a NPCConversation object (i.e., an object with the NPC Conversation script attached to it) selected. For more details, check the DialogueEditor documentation in `Assets/DialogueEditor/DialogueEditorDocumentation.pdf` [here](https://github.com/CSC4790-Fall2022-Org/senior-project-somnia-game/blob/dev/Assets/DialogueEditor/DialogueEditorDocumentation.pdf).
+5. Use `Build Settings` in the top menu to add scenes to build. This is also used for scene transitions. The game can be built for OSX and Windows. You can try other platforms, but we have not tested them.
+6. You can preview how the game looks with the Game view.
 
 ### Execution
-Ensure that you are on the Menu.unity scene before pressing play. If you are not on this scene, change to it by pressing File --> Open Scene, and navigate to the scenes folder. Click on Menu.unity, then just press the play button at the top!
-
+Ensure that you are on the `Menu.unity` scene before pressing play. If you are not on this scene, change to it by pressing `File -> Open Scene`, and navigate to `Assets/Scenes`. Click on `Menu.unity`, then just press the play button at the top!

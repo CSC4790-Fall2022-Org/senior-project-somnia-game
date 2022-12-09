@@ -81,6 +81,13 @@ namespace DialogueEditor
         private List<UIConversationButton> m_uiOptions;
         private int m_currentSelectedIndex;
 
+        // Custom Dialogue Advancement
+        // Delegate type for holding a function that handles clicks
+        public delegate void ClickHandler(SpeechNode next);
+        // Instantiation of the above delegate
+        public event ClickHandler OnLeftClickOrSpace;
+        // Holds the next speech bubble (or null if there is none) to facilitate using a delegate function
+        SpeechNode nextSpeech;
 
         //--------------------------------------
         // Awake, Start, Destroy, Update
@@ -124,7 +131,16 @@ namespace DialogueEditor
                     break;
 
                 case eState.Idle:
+                    // The current dialogue has finished displaying
                     Idle_Update();
+                    // Call the function to advance speech using left click or space
+                    if (
+                        OnLeftClickOrSpace != null &&
+                        (/*Input.GetMouseButtonDown(0) || */Input.GetKeyDown(KeyCode.Space))
+                        )
+                    {
+                        OnLeftClickOrSpace(nextSpeech);
+                    }
                     break;
 
                 case eState.TransitioningOptionsOff:
@@ -256,6 +272,16 @@ namespace DialogueEditor
             return value;
         }
 
+        public void hide()
+        {
+            transform.localScale = new Vector3(0, 0, 0);
+        }
+
+        public void show()
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
 
         //--------------------------------------
         // Set state
@@ -358,6 +384,14 @@ namespace DialogueEditor
                 {
                     SetState(eState.TransitioningOptionsOn);
                 }
+            }
+
+            // Finish in advance if space or leftclick is pressed
+            if (Input.GetKeyDown(KeyCode.Space) /*|| Input.GetMouseButtonDown(0)*/)
+            {
+                m_scrollIndex = m_targetScrollTextCount;
+                DialogueText.maxVisibleCharacters = m_scrollIndex;
+                SetState(eState.TransitioningOptionsOn);
             }
         }
 
@@ -651,10 +685,19 @@ namespace DialogueEditor
             // Debug.Log("[ConversationManager]: Conversation UI off.");
 #endif
         }
+        
+        // function that will get stored in the delegate above
+        void AdvanceToNext(SpeechNode next)
+        {
+            SpeechSelected(next as SpeechNode);
+        }
 
         private void CreateUIOptions()
         {
-            // Display new options
+            // Reset the left click/space event (player should not be able to use these to advance dialogue)
+            OnLeftClickOrSpace = null;
+
+            // Display new options (choices)
             if (m_currentSpeech.ConnectionType == Connection.eConnectionType.Option)
             {
                 for (int i = 0; i < m_currentSpeech.Connections.Count; i++)
@@ -667,7 +710,7 @@ namespace DialogueEditor
                     }
                 }
             }
-            // Display Continue/End options
+            // Display Continue/End options (regular dialogue advancement)
             else
             {
                 bool notAutoAdvance = !m_currentSpeech.AutomaticallyAdvance;
@@ -677,10 +720,19 @@ namespace DialogueEditor
                 {
                     if (m_currentSpeech.ConnectionType == Connection.eConnectionType.Speech)
                     {
-                        UIConversationButton uiOption = CreateButton();
+                        // Dialogue Advancement Button
+                        // UIConversationButton uiOption = CreateButton();
                         SpeechNode next = GetValidSpeechOfNode(m_currentSpeech);
 
+                        // Store the next SpeechNode
+                        nextSpeech = next;
+
+                        // Subscribe the function to left click or space event
+                        OnLeftClickOrSpace += AdvanceToNext;
+
+                        // Not needed if we are not using the Continue/End buttons
                         // If there was no valid speech node (due to no conditions being met) this becomes a None button type
+                        /*
                         if (next == null)
                         {
                             uiOption.SetupButton(UIConversationButton.eButtonType.End, null, endFont: m_conversation.EndConversationFont);
@@ -690,12 +742,21 @@ namespace DialogueEditor
                         {
                             uiOption.SetupButton(UIConversationButton.eButtonType.Speech, next, continueFont: m_conversation.ContinueFont);
                         }
+                        */
                         
                     }
                     else if (m_currentSpeech.ConnectionType == Connection.eConnectionType.None)
                     {
+                        // Make the next SpeechNode null (it is nothing because this is the end)
+                        nextSpeech = null;
+
+                        // Subscribe the function to left click or space event
+                        OnLeftClickOrSpace += AdvanceToNext;
+                        // Not needed if we are not using the Continue/End buttons
+                        /*
                         UIConversationButton uiOption = CreateButton();
                         uiOption.SetupButton(UIConversationButton.eButtonType.End, null, endFont: m_conversation.EndConversationFont);
+                        */
                     }
                 }
 
