@@ -38,16 +38,10 @@ public class NightHealthManager : MonoBehaviour
         {
             health = 100;
         }
-        if(health == 0) {
+        if(health <= 0) {
             health = 0;
             endSound.Play();
             SceneManager.LoadScene(11);
-
-        }
-        if(health < 0)
-        {
-            
-            health = 0;
         }
     }
 
