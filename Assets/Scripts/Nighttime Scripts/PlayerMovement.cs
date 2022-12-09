@@ -18,10 +18,12 @@ public class PlayerMovement : MonoBehaviour
     public Transform indicator;
     public KeyCode indicator_left;
     public KeyCode indicator_right;
+    public KeyCode useZip;
     public Transform in_pos1, in_pos2, in_pos3, in_pos4, in_pos5;
     
     public float speed = 10f;
     int lane = 3;
+    int indicator_lane = 3;
     Vector2 playerPosition = new Vector2(-2, -3);
     bool movementBool = false;
 
@@ -49,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         checkInput();
+        zipControl();
         setMovementBool();
         songPosition = (float)(AudioSettings.dspTime - dspSongTime);
         songPositionInBeats = (int)(songPosition / secPerBeat);
@@ -141,7 +144,106 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void zipControl() {
-            
+
+            if (Input.GetKeyDown(indicator_left)){
+                Vector3 indicatorTarget = transform.position;
+
+                if (indicator_lane == 2)
+                {
+                    indicatorTarget = in_pos1.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 3)
+                {
+                    indicatorTarget = in_pos2.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 4)
+                {
+                    indicatorTarget = in_pos3.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 5)
+                {
+                    indicatorTarget = in_pos4.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if(indicator_lane > 1)
+                {
+                    indicator_lane--;
+                }
+            }
+
+            if (Input.GetKeyDown(indicator_right)) {
+                Vector3 indicatorTarget = transform.position;
+
+                if (indicator_lane == 1)
+                {
+                    indicatorTarget = in_pos2.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 2)
+                {
+                    indicatorTarget = in_pos3.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 3)
+                {
+                    indicatorTarget = in_pos4.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if (indicator_lane == 4)
+                {
+                    indicatorTarget = in_pos5.transform.position;
+                    indicator.transform.position = indicatorTarget;
+                }
+
+                if(indicator_lane < 5)
+                {
+                    indicator_lane++;
+                }
+            }
+
+            if (Input.GetKeyDown(useZip)){
+                Vector3 targetPosition = transform.position;
+
+                if (indicator_lane == 1)
+                {
+                    targetPosition.x = pos1.transform.position.x;
+                    transform.position = targetPosition;
+                }
+
+                if (indicator_lane == 2)
+                {
+                    targetPosition.x = pos2.transform.position.x;
+                    transform.position = targetPosition;
+                }
+
+                if (indicator_lane == 3)
+                {
+                    targetPosition.x = pos3.transform.position.x;
+                    transform.position = targetPosition;
+                }
+
+                if (indicator_lane == 4)
+                {
+                    targetPosition.x = pos4.transform.position.x;
+                    transform.position = targetPosition;
+                }
+
+                if(indicator_lane == 5)
+                {
+                    targetPosition.x = pos5.transform.position.x;
+                    transform.position = targetPosition;
+                }
+            }
     }
 
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
