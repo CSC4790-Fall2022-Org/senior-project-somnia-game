@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform in_pos1, in_pos2, in_pos3, in_pos4, in_pos5;
     
     public float speed = 10f;
+    private const float zipCooldown = 5.0f;
+    public float zipTimer = zipCooldown;
     int lane = 3;
     int indicator_lane = 3;
     Vector2 playerPosition = new Vector2(-2, -3);
@@ -53,8 +55,11 @@ public class PlayerMovement : MonoBehaviour
         checkInput();
         zipControl();
         setMovementBool();
+
         songPosition = (float)(AudioSettings.dspTime - dspSongTime);
         songPositionInBeats = (int)(songPosition / secPerBeat);
+
+        zipTimer -= Time.deltaTime;
     }
 
     void setMovementBool()
@@ -211,7 +216,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(useZip)){
+            if (Input.GetKeyDown(useZip) && zipTimer <= 0){
                 Vector3 targetPosition = transform.position;
 
                 if (indicator_lane == 1)
@@ -243,6 +248,9 @@ public class PlayerMovement : MonoBehaviour
                     targetPosition.x = pos5.transform.position.x;
                     transform.position = targetPosition;
                 }
+
+                lane = indicator_lane;
+                zipTimer = zipCooldown;
             }
     }
 
