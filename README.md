@@ -1,7 +1,7 @@
 # Somnia: A College Life Simulator
 Repo for CSC 4790 Senior Project Somnia. Experience the wonders of time, energy, and sleep management during college life.
 
-**[CSC 4790 Final Release]**
+[CSC 4790 Final Release](https://github.com/CSC4790-Fall2022-Org/senior-project-somnia-game/releases/tag/final-release)
 
 ## Abstract
 Somnia shows the importance of sleep and time management by putting the player in the shoes of a new college student. Players are free to choose what they do, but must manage their stats and time, mirroring real life responsibility. Stats show how certain actions affect the players and affect the difficulty of the night section, which simulates sleep and will affect the next day. This illustrates how sleep affects a student's daily life. 
